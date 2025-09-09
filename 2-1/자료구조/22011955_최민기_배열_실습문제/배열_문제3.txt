@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>         //라이브러리 선언
+
+int main(void) {            //main 함수
+    int N,a=1;              //변수 선언
+    int arr[100][100];
+    
+    scanf("%d",&N);         //N값 입력
+    
+    for(int i=0;i<N;i++){   //반복
+        if(i%2==0){         //홀수열 일 때
+            for(int j=0;j<N;j++){   //N번 반복
+                arr[i][j]=a;
+                a++;
+            }
+            a+=N-1;         //짝수열을 위해 준비
+        }
+        else{               //짝수열 일 때
+            for(int j=0;j<N;j++){   //N번 반복
+                arr[i][j]=a;    //내림차순으로 출력
+                a--;
+            }
+            a+=N+1;         //홀수열을 위해 준비
+        }
+    }
+    
+    for(int i=0;i<N;i++){
+        for(int j=0;j<N;j++){
+            printf(" %d",arr[i][j]);    //반복으로 출력
+        }
+        printf("\n");
+    }
+    return 0;               //0 반환
+}

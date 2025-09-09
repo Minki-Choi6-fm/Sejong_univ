@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>         //라이브러리 선언
+
+int main(void) {            //main 함수
+    int N,count;
+    int X[101],Y[101];      //변수 및 배열 선언
+    
+    scanf("%d",&N);
+    for(int i=0;i<N;i++){
+        scanf("%d",&X[i]);
+        Y[i]=i;             //변수 및 배열값 입력
+    }
+    scanf("%d",&count);     //뒤집기 정보의 개수 입력
+    
+    for(int i=0;i<count;i++){
+        int a,b;
+        scanf("%d %d",&a,&b);   //뒤집기 정보 입력
+        for(int j=0;j<=(b-a)/2;j++){
+            int tmp=Y[a+j];
+            Y[a+j]=Y[b-j];
+            Y[b-j]=tmp;     //뒤집기 정보로 순서 바꾸기
+        }
+    }
+    for(int i=0;i<N;i++){   //출력
+        printf(" %d",X[Y[i]]);
+    }
+    
+    return 0;               //0 반환
+}

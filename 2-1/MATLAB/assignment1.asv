@@ -1,0 +1,10 @@
+%assignment 1
+%%(a)
+a=5;b=7;r=25;
+c=sqrt(a^2+b^2-(2*a*b*cos(r)))
+%%b
+alpha=a*sin((a*sin(r))/c)
+beta=180-(a*sin((b*sin(r))/c))
+%%c
+left=(a-b)/(a+b);
+right=tan((alpha-beta)/2)/tan(alpha)

@@ -1,0 +1,111 @@
+#pragma warning(disable:4996)
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>                 //헤더 선언
+
+typedef struct Node {
+    char elem;
+    struct Node* prev;
+    struct Node* next;
+} Node;                             //연결리스트를 위한 구조체 선언
+
+Node* head;
+Node* tail;                         //헤더 및 트레일러 노드 선언
+
+void initializeDummies(void){       //깡통 헤더 노드 및 트레일러 노드 선언을 위한 함수
+    head = (Node*)malloc(sizeof(Node));
+    tail = (Node*)malloc(sizeof(Node));
+    head->elem = tail->elem = '\0';
+    head->prev = NULL;
+    head->next = tail;
+    tail->prev = head;
+    tail->next = NULL;              //헤더와 트레일러 이어주기
+}
+
+void add(int r, char e) {           //add 함수
+    Node* node = (Node*)malloc(sizeof(Node));   //연결리스트 메모리 할당
+    node->elem = e;
+    Node* cur = head->next;
+    for (int i = 1; i < r; i++) {
+        cur = cur->next;
+    }
+    node->prev = cur->prev;
+    node->next = cur;
+    cur->prev->next = node;
+    cur->prev = node;               //새 연결리스트 요소 만들기 및 집어넣기
+}
+
+void delete(int r) {                //delete 하뭇
+    Node* cur = head->next;
+    for (int i = 1; i < r; i++) {
+        cur = cur->next;
+    }
+    cur->prev->next = cur->next;
+    cur->next->prev = cur->prev;
+    free(cur);                      //지운 뒤 메모리 할당 해제
+}
+
+char get(int r) {                   //get 함수
+    Node* cur = head->next;
+    for (int i = 1; i < r; i++) {
+        cur = cur->next;
+    }
+    return cur->elem;               //글자 추출 뒤 반환
+}
+
+void print(void){                   //void 함수
+    Node* cur = head->next;
+    while (cur != tail) {
+        printf("%c", cur->elem);
+        cur = cur->next;
+    }
+    printf("\n");                   //전체 출력
+}
+
+int main(void) {                    //main 함수
+    initializeDummies();            //헤더 및 트레일러 만들어주기
+    int n, count = 0;               //변수 선언
+    scanf("%d", &n);                //입력
+    for (int i = 0; i < n; i++) {   //n번 반복
+        char cmd;
+        scanf(" %c", &cmd);         //수행할 함수 입력
+        if (cmd == 'A') {           //추가하라고 하면
+            int pos;
+            char ch;
+            scanf("%d %c", &pos, &ch);      //추가정보 받은 뒤
+            if (pos >= 1 && pos <= count + 1) {
+                add(pos, ch);               //연결리스트에 추가해주기
+                count++;
+            } else {
+                printf("invalid position\n");   //이상하면 출력
+            }
+        } else if (cmd == 'D') {    //지우라고 하면
+            int pos;
+            scanf("%d", &pos);      //추가정보 받은 뒤
+            if (pos >= 1 && pos <= count) {
+                delete(pos);        //지우기
+                count--;
+            } else {
+                printf("invalid position\n");   //이상하면 출력
+            }
+        } else if (cmd == 'G') {    //추출하라고 하면
+            int pos;
+            scanf("%d", &pos);      //추가정보 받은 뒤
+            if (pos >= 1 && pos <= count) {
+                printf("%c\n", get(pos));   //추출하고 그 값 출력
+            } else {
+                printf("invalid position\n");   //이상하면 출력
+            }
+        } else if (cmd == 'P') {    //출력하라고 하면
+            print();                //전체 출력
+        }
+    }
+    Node* cur = head;
+    while (cur != NULL) {           //전체 동적할당 해제
+        Node* next = cur->next;
+        free(cur);
+        cur = next;
+    }
+
+    return 0;                       //0 반환
+}

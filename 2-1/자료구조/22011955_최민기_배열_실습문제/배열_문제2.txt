@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>         //라이브러리 선언
+
+int main(void) {            //main 함수
+    int N,len,temp;         //변수 선언
+    int X[101];             //배열 선언
+    int *change;            //포인터(동적할당 배열)선언
+    
+    scanf("%d",&N);
+    for(int i=0;i<N;i++){
+        scanf("%d",&X[i]);
+    }                       //배열 길이 및 배열 입력
+    scanf("%d",&len);       //순서 바꿈 정보 길이 입력
+    change=(int *)malloc(sizeof(int)*(len+1));  //동적할당
+    for(int i=0;i<len;i++){
+        scanf("%d",&change[i]);     //순서 바꿈 정보 입력
+    }
+    temp=X[change[0]];
+    for(int i=len-1;i>1;i--){
+        X[change[i]]=X[change[i-1]];
+    }
+    X[change[1]]=temp;          //순서 바꿈 실행
+    for(int i=0;i<N;i++){
+        printf(" %d",X[i]);     //바꾼 배열 출력
+    }
+    free(change);           //동적할당 해제
+    return 0;               //0 반환
+}

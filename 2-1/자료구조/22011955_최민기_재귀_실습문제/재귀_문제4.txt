@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>         //라이브러리 선언
+
+int divide(int n,int *m,int max,int count){  //재귀함수 divide 선언
+    if(count==n){           //종료조건에 도달 시
+        return max;         //최댓값 반환
+    }
+    else{                   //아니면
+        count++;            //횟수 기록
+        if(max<*m){         //최댓값 나오면
+            return divide(n,(m+1),*m,count);    //최댓값 갱신 후 재귀호출
+        }
+        else{               //안나오면
+            return divide(n,(m+1),max,count);   //갱신 없이 재귀호출
+        }
+    }
+}
+
+int main(void) {            //main 함수
+    int N;                  //변수 선언
+    int n[21];              //배열 선언
+    scanf("%d",&N);         //변수 입력
+    for(int i=0;i<N;i++){
+        scanf("%d",&n[i]);  //배열 입력
+    }
+    printf("%d",divide(N,n,0,0));          //재귀 함수 호출 및 출력
+    return 0;               //0 반환
+}

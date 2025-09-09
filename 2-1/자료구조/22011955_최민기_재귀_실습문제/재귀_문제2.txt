@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>         //라이브러리 선언
+
+int print(int N){           //print 재귀함수
+    if(N>=10){              //조건:맨 윗자리에 도달하지 않았으면
+        print(N/10);        //재귀호출로 윗숫자로 올리기
+        printf("%d\n",N%10);//마지막 출력
+    }
+    else{                   //도달하면
+        printf("%d\n",N);   //윗자리 출력
+    }
+    return 0;               //0 반환
+}
+
+int main(void) {            //main 함수
+    int N;                  //변수 선언
+    scanf("%d",&N);         //입력
+    print(N);               //재귀함수 호출
+    return 0;               //0 반환
+}

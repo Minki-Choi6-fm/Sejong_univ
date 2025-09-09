@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>         //라이브러리 선언
+
+int main(void) {            //main 함수
+    int N,M,count=1;        //변수 선언
+    int a=0,b=0;
+    int arr[100][100]={0};  //배열 선언
+    scanf("%d %d",&N,&M);   //배열 크기 입력
+    
+    while(count<=N*M){      //N*M만큼 반복
+        arr[a][b]=count;    //배열 값 입력
+        if(a+1==N||b-1<0){  //범위값 초과시
+            int c=a+b+1;
+            if(c<M){        //대각선의 맨 윗쪽이 0이면
+                a=0;
+                b=c;
+            }
+            else{           //아니면
+                a=c-M+1;
+                b=M-1;
+            }
+            
+        }
+        else{           //범위값 안이면
+            a++;
+            b--;
+        }
+        count++;        //1추가
+    }
+    for(int i=0;i<N;i++){
+        for(int j=0;j<M;j++){
+            printf(" %d",arr[i][j]);    //배열 출력
+        }
+        printf("\n");
+    }
+    return 0;               //0 반환
+}

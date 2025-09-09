@@ -1,0 +1,127 @@
+#pragma warning(disable:4996)
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdbool.h>                //헤더 선언
+#define MAX 101
+
+typedef struct Node{                //Node 구조체
+    int elem;
+    struct Node *next;
+    struct Node *prev;
+}Node;
+
+typedef struct Deque{               //Deque 구조체
+    Node *f;
+    Node *r;
+}Deque;
+
+Deque *initDeque(void){             //initDeque 함수
+    Deque *deque=(Deque*)malloc(sizeof(Deque));
+    deque->f=NULL;
+    deque->r=NULL;
+    return deque;                   //초기화한 덱 반환
+}
+void add_front(Deque *deque,int X){ //add_front 함수
+    Node *new=(Node*)malloc(sizeof(Node));
+    new->elem=X;
+    new->next=NULL;
+    new->prev=NULL;                 //노드 구성
+    if(deque->f==NULL){             //덱에 하나도 없으면
+        deque->f=new;
+        deque->r=new;               //넣어주기
+    }
+    else{                           //있으면
+        deque->f->prev=new;
+        new->next=deque->f;
+        deque->f=new;               //앞에 추가
+    }
+}
+void add_rear(Deque *deque,int X){  //add_rear 함수
+    Node *new=(Node*)malloc(sizeof(Node));
+    new->elem=X;
+    new->next=NULL;
+    new->prev=NULL;                 //노드 구성
+    if(deque->f==NULL){             //덱에 하나도 없으면
+        deque->f=new;
+        deque->r=new;               //넣어주기
+    }
+    else{                           //있으면
+        new->prev=deque->r;
+        deque->r->next=new;
+        deque->r=new;               //뒤에 추가
+    }
+}
+void delete_front(Deque *deque){    //delete_front 함수
+    Node *node=deque->f;
+    if(deque->f==deque->r){         //하나만 남으면
+        deque->f=NULL;
+        deque->r=NULL;              //처음 상태로 초기화
+    }
+    else{                           //2개 이상 남으면
+        deque->f=node->next;
+        node->next->prev=NULL;      //덱에서 제거
+    }
+    free(node);                     //메모리 해제
+}
+void delete_rear(Deque *deque){     //delete_rear 함수
+    Node *node=deque->r;
+    if(deque->f==deque->r){         //하나만 남으면
+        deque->f=NULL;
+        deque->r=NULL;              //처음 상태로 초기화
+    }
+    else{                           //2개 이상 남으면
+        deque->r=node->prev;
+        node->prev->next=NULL;      //덱에서 제거
+    }
+    free(node);                     //메모리 해제
+}
+void print(Deque *deque){           //print 함수
+    Node *node=deque->f;
+    while(node!=NULL){
+        printf(" %d",node->elem);
+        node=node->next;
+    }
+    printf("\n");                   //끝까지 출력
+}
+int main(void) {                    //main 함수
+    Deque *D=initDeque();
+    int n;
+    scanf("%d",&n);
+    
+    for(int i=0;i<n;i++){           //n번 반복
+        char c,d;
+        int e;
+        scanf(" %c",&c);            //변수 입력
+        if(c=='A'){
+            scanf("%c %d",&d,&e);
+            if(d=='F'){             //AF 입력되면
+                add_front(D,e);     //함수 호출
+            }
+            if(d=='R'){             //AR 입력되면
+                add_rear(D,e);      //함수 호출
+            }
+        }
+        if(c=='D'){
+            scanf("%c",&d);
+            if(d=='F'){             //DF 입력되면
+                if(D->f==NULL){     //underflow 발생시
+                    printf("underflow");
+                    return 0;       //오류 출력 및 종료
+                }
+                delete_front(D);    //아니면 함수 호출
+            }
+            if(d=='R'){             //DR 입력되면
+                if(D->f==NULL){     //underflow 발생시
+                    printf("underflow");
+                    return 0;       //오류 출력 및 종료
+                }
+                delete_rear(D);     //아니면 함수 호출
+            }
+        }
+        if(c=='P'){                 //P 입력되면
+            print(D);                //print 호출
+        }
+    }
+    return 0;                       //0 반환
+}

@@ -1,0 +1,62 @@
+#pragma warning(disable:4996)
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdbool.h>                //헤더 선언
+#define MAX 101
+
+int stack[MAX];
+int top=-1;                         //스택 선언
+
+bool isOperand(char c){             //isOperand 함수
+    if (c>='0'&&c<='9')return true; //대문자 글자면 true
+    return false;                   //아니면 false 반환
+}
+void push(int c){                   //push 함수
+    stack[++top]=c;                 //스택에 입력
+}
+int pop(void){                     //pop 함수
+    return stack[top--];            //스택에서 배출
+}
+int doOperator(char s,int a,int b){ //doOperator 함수
+    switch (s){
+        case '+':
+            return a+b;
+        case '-':
+            return b-a;
+        case '*':
+            return a*b;
+        case '/':
+            return b/a;             //계산한 값 반환
+    }
+    return 0;
+}
+
+void evaluate(char *str){            //evaluate 함수
+    for(int i=0;i<strlen(str);i++){ //반복
+        char s=str[i];
+        if(isOperand(s)){           //숫자면
+            int c=s-'0';
+            push(c);                //스택 추가
+        }
+        else{                       //연산자면
+            int a=pop();
+            int b=pop();            //두 숫자 빼서
+            push(doOperator(s,a,b));    //계산한 다음 다시 스택 넣기
+        }
+    }
+    printf("%d",pop());             //결괏값 출력
+    printf("\n");                   //줄바꿈
+}
+
+int main(void) {                    //main 함수
+    int N;
+    char M[101];                    //변수 선언
+    scanf("%d", &N);                //입력
+    for (int i = 0;i < N;i++) {     //N번 반복
+        scanf("%s",M);
+        evaluate(M);                 //함수 호출
+        top=-1;                     //초기화
+    }
+    return 0;                       //0 반환
+}

@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>         //라이브러리 선언
+
+
+int findletter(char n,char *m){ //재귀함수 findletter
+    if(*m=='\0'){               //탐색할 문자가 끝나면
+        return 0;               //종료
+    }
+    else{
+        if(*m==n){              //찾는 문자이면
+            return 1+findletter(n,m+1); //1 추가한 뒤 재귀호출
+        }
+        else{                   //아니면
+            return findletter(n,m+1);   //그냥 재귀호출
+        }
+    }
+}
+
+int main(void) {            //main 함수
+    char N;                 //문자 선언
+    char M[101];            //문자열 배열 선언
+    scanf("%s",M);          //문자열 입력
+    getchar();              //개행문자 제거
+    scanf("%c",&N);         //찾을 문자 입력
+    
+    printf("%d",findletter(N,M));   //출력
+    
+    return 0;               //0 반환
+}

@@ -1,0 +1,96 @@
+#pragma warning(disable:4996)
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>                 //헤더 선언
+
+typedef struct Node {
+    int coef;
+    int exp;
+    struct Node* next;
+} Node;                             //연결리스트 노드를 위한 구조체 선언
+
+typedef struct List {
+    Node* head;
+} List;                             //연결리스트를 위한 구조체 선언
+
+List* initializeList(void) {        //initializeList 함수(구조체 초기화)
+    List* a = (List*)malloc(sizeof(List));      //리스트 선언
+    a->head = (Node*)malloc(sizeof(Node));      //노드 선언
+    a->head->next = NULL;   
+    return a;                                   //초기화 후 반환
+}
+
+void appendTerm(Node* head, int b, int c) { //appendTerm 함수(노드 추가)
+    Node* node = (Node*)malloc(sizeof(Node));
+    node->coef = b;
+    node->exp = c;
+    node->next = NULL;                      //노드 만들어주기
+    while (head->next != NULL) {            //끝까지 이동
+        head = head->next;
+    }
+    head->next = node;                      //리스트 끝에 붙여주기
+}
+List* addPoly(List* a, List* b) {           //addPoly 함수(함수 서로 더해주기)
+    List* K = initializeList();             //합할 리스트 선언
+    Node* A = a->head->next;                
+    Node* B = b->head->next;                //초기 위치 설정
+    while ((A != NULL) && (B != NULL)) {    //양쪽 다항식 중 하나가 끝날 때까지 반복
+        if (A->exp > B->exp) {              
+            appendTerm(K->head, A->coef, A->exp);
+            A = A->next;
+        }
+        else if (A->exp < B->exp) {
+            appendTerm(K->head, B->coef, B->exp);
+            B = B->next;                    //어느 한쪽의 지수가 더 높으면 먼저 붙여주기
+        }
+        else {                              
+            int sum = A->coef + B->coef;
+            if (sum != 0) {
+                appendTerm(K->head, sum, A->exp);
+            }
+            A = A->next;
+            B = B->next;                    //같으면 계수를 서로 더하고 붙여주기
+        }
+    }
+    while (A != NULL) {
+        appendTerm(K->head, A->coef, A->exp);
+        A = A->next;
+    }
+    while (B != NULL) {
+        appendTerm(K->head, B->coef, B->exp);
+        B = B->next;                         //위에서 처리 못한 남은 노드 붙여주기
+    }
+    return K;                       //리스트 반환
+}
+
+int main(void) {                    //main 함수
+    int first, second;              //변수 선언
+    List* a = initializeList();
+    List* b = initializeList();
+    List* c = initializeList();     //리스트 선언
+
+    scanf("%d", &first);
+
+    for (int i = 0;i < first;i++) {
+        int coef, exp;
+        scanf("%d %d", &coef, &exp);    //첫번째 다항식 입력받고
+        appendTerm(a->head, coef, exp); //첫번째 리스트에 추가
+    }
+
+    scanf("%d", &second);
+
+    for (int i = 0;i < second;i++) {
+        int coef, exp;
+        scanf("%d %d", &coef, &exp);    //두번째 다항식 입력받고
+        appendTerm(b->head, coef, exp); //두번째 리스트에 추가
+    }
+    
+    c = addPoly(a, b);                  //두 다항식을 더해 한 다항식으로 만들어주기
+    Node* d = c->head->next;            
+
+    while (d!= NULL) {
+        printf(" %d %d", d->coef, d->exp);  //합친 다항식 출력
+        d = d->next;
+    }
+    return 0;                       //0 반환
+}

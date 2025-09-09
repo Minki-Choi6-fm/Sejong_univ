@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>         //라이브러리 선언
+
+int gcd(int n,int m){       //재귀함수 gcd 선언
+    if(m==0){               //나머지가 없으면
+        return n;           //재귀반복 종료
+    }
+    else{                   //있으면
+        return gcd(m,n%m);  //재귀 반복
+    }
+}
+
+int main(void) {            //main 함수
+    int N,M;                //변수 선언
+    scanf("%d %d",&N,&M);   //변수 입력
+    if(N<M){                //계산하기 쉽게 순서 변경
+        int temp=M;
+        M=N;
+        N=temp;
+    }
+    printf("%d",gcd(N,M));  //재귀 함수 호출 및 출력
+    return 0;               //0 반환
+}

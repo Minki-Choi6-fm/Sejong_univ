@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>         //라이브러리 선언
+
+int main(void) {            //main 함수
+    int N,M;                //변수 선언
+    int arr[100][100]={0};  //배열 선언
+    int check[100][100]={0};//방문 여부 배열 선언
+    
+    int dx[4]={1,0,-1,0};
+    int dy[4]={0,1,0,-1};   //방향 벡터
+    int way=0;              //방향값
+    int count=1;            //넣을 숫자
+    int a=0,b=0;            //현재 위치
+    
+    scanf("%d %d",&N,&M);   //변수 입력
+    
+    while(count<=N*M){      //반복문
+        arr[a][b]=count;    //배열에 값 넣기
+        check[a][b]=1;      //방문여부 넣기
+        if(check[a+dy[way]][b+dx[way]]==1){ //앞으로 갈 곳이 방문 했더라면
+            way=(way+1)%4;
+            a+=dy[way];
+            b+=dx[way];         //방향 전환 후 가기
+        }
+        else{           //방문 안 했으면
+            a+=dy[way]; //그냥 가기
+            b+=dx[way];
+        }
+        if(a<0||a==N||b<0||b==M){//범위값 초과하면
+            way=(way+1)%4;
+            a+=dy[way];
+            b+=dx[way];
+            if(a<0)a=0;
+            if(a==N)a=N-1;
+            if(b<0)b=0;
+            if(b==M)b=M-1;      //초기화 시켜주기
+        }
+        count++;            //넣는 숫자 1추가
+    }
+    
+    for(int i=0;i<N;i++){
+        for(int j=0;j<M;j++){
+            printf(" %d",arr[i][j]);    //배열 출력
+        }
+        printf("\n");
+    }
+    return 0;               //0 반환
+}

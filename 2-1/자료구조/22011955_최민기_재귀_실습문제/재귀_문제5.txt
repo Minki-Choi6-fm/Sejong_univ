@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>         //라이브러리 선언
+
+void hanoi(char from,char temp,char to,int count){  //재귀함수 hanoi 선언
+    if (count==1){                                  //마지막 1개만 남았을 시
+        printf("%c %c\n",from,to);                  //원판 이동
+    }
+    else {                                          //아직 2개 이상이 남았을 시
+        hanoi(from,to,temp,count-1);                //위에 count-1개의 원판을 from에서 temp로 옮기는 재귀함수 호출
+        printf("%c %c\n",from,to);                  //가장 큰 원판 이동
+        hanoi(temp,from,to,count-1);                //위에 count-1개의 원판을 temp에서 to로 옮기는 재귀함수 호출
+    }
+}
+
+int main(void) {            //main 함수
+    int N;                  //변수 선언
+    scanf("%d",&N);         //변수 입력
+    hanoi('A','B','C',N);   //함수 호출
+    return 0;               //0 반환
+}
