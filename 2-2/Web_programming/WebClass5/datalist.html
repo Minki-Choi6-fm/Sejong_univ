@@ -1,0 +1,11 @@
+<form action="b.jsp">
+    <input list="browsers" name="browser">      <!-- <datalist> input과 연동시켜 쓰는 select 같은 역할 -->
+    <datalist id="browsers">                    <!-- input list 값과 datalist id 값의 속성이 같야 함 -->
+        <option value="Chrome"></option>        <!-- datalist는 사용자가 선택 뿐 아니라 원하는 것도 입력해 전송 가능-->
+        <option value="Edge"></option>
+        <option value="Opera"></option>
+        <option value="Firefox"></option>
+        <option value="Safari"></option>
+    </datalist>
+    <input type="submit">
+</form>
