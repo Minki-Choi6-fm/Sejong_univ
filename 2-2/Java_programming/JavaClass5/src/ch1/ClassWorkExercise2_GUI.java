@@ -14,8 +14,8 @@ class calender_1 {
 class b_day_check_1 {
 	
 	public calender_1 inputCalender(String str){
-		int month = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter month as a number:", str));
-		int day = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter the day of the month:", str));
+		int month = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter month as a number:", str, JOptionPane.QUESTION_MESSAGE));
+		int day = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter the day of the month:", str, JOptionPane.QUESTION_MESSAGE));
 
         calender_1 date = new calender_1(month, day);
         return date;
