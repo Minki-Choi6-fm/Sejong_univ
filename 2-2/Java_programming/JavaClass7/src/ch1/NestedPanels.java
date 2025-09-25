@@ -32,5 +32,6 @@ public class NestedPanels {
 		frame.getContentPane().add(primary);
 		frame.pack();
 		frame.setVisible(true);
+
 	}
 }

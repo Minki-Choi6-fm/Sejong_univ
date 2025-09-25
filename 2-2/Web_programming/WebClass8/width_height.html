@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                margin:0px;
+                padding:0px;
+            }
+            p{
+                margin-top: 20px;   /* 이렇게 마진 부위도 설정 가능 */
+                margin-left: 50px;
+                padding-left: 20px; /* 패딩 또한 부위 설정 가능 */
+                background-color: yellow;
+            }
+            div{
+                margin:50px;   /* 마진은 박스와 바깥 바탕의 갭, 마이너스면 현재 상황에선 p와 겹침(반대로 감) */
+                padding:10px 20px 30px 40px;   /* 패딩은 글자와 박스 사이의 갭, 북쪽부터 시계방향으로 지정 */
+                width:100px;                    
+                height:50px;
+                background-color: lightgreen;
+            }
+        </style>
+    </head>
+    <body>
+        <p>이것은 p 요소 입니다.</p>
+        <div>이것은 div 요소입니다.</div>
+    </body>
+</html>
