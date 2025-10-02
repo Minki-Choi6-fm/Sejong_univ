@@ -1,43 +1,124 @@
 body{
     background-color: rgb(200, 200, 200);
+    margin:0px;
 }
-header{
-    display:block;
+header {
     background-color: #212121;
-    max-width: 100%;
-    text-align: center;
+    width: 100%;
+    padding: 15px 30px;
+    box-sizing: border-box;
 }
-header a{
-    color:white;
-    text-align: center;
-    padding: auto;
+
+header h1 {
+    margin: 0;
+}
+
+header a {
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 1.0em;
+}
+
+header a img, header a div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+header a img {
+    height: 70px;
+    width: auto;
+    margin-right: 1%;
+}
+nav{
+    background-color: rgb(101, 101, 101);
 }
 nav ul{
     list-style: none;
     text-align: center;
-    padding: 10px 0;
+    padding:10px 0;
+    margin:0px;
 }
 nav ul li{
     display:inline;
     text-transform: uppercase;
-    padding:0 10px;
+    padding:0 50px;
 
 }
 nav ul li a{
-    color:black;
+    color:whitesmoke;
+    text-decoration: none;
+    position: relative;
+    
+}
+#right_side{
+    position:fixed;
+    height: 10%;
+    width: 5%;
+
+    top:40%;
+    right:2%;
+    background-color: rgb(98, 98, 98);
+    border-radius: 5px;
+    box-shadow: 1px 1px 8px black;
+}
+#right_side a{
+    color:whitesmoke;
+    text-align: center;
+    font-size: 1.2em;
+    text-decoration:none;
+    font-weight: bold;
+}
+#main_page img{
+    width:100%;
+    height:auto;
+}
+#main_page div{
+    position:absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+
+    text-align: right;
+    color:whitesmoke;
+    font-size:2.0em;
+    text-shadow: 2px 2px 8px black;
 }
 #bike_video{
+    padding: 10% 0;
     text-align: center;
 }
 video{
     border-radius: 25px;
-    width:90%;
+    width:80%;
+}
+#bike_image{
+    background-color: rgb(184, 184, 184);
+    margin:0;
+}
+#bike_text{
+    top:50px;
+    position: relative;
+    text-align: center;
+    font-size: 2em;
+    text-shadow: 2px 2px 4px rgb(145, 145, 145);
+}
+#bike_text p{
+    position:absolute;
+    left: 50%;
+    top: 150%;
+    transform: translate(-50%,-50%);
+    align-items: center;
+
+    opacity: 0;
+
+    animation-name: fadeEffect;
+    animation-duration: 18s;
+    animation-iteration-count: infinite;
 }
 .image_slideshow {
     position: relative; /* 이미지들의 position: absolute 기준점 역할 */
-    width: 90%;         /* 화면 너비의 90%를 차지 */
-    max-width: 1200px;  /* 아무리 큰 화면에서도 최대 1200px을 넘지 않게 */
-    margin: 50px auto;  /* 위아래 여백 50px, 좌우는 자동으로 중앙 정렬 */
+    width: 70%;         /* 화면 너비의 100%를 차지 */
+    margin: 0 auto;  /* 위아래 여백 0, 좌우는 자동으로 중앙 정렬 */
 
     /* 가로세로 비율을 유지하는 기법 (16:9 비율 예시) */
     height: 0;
@@ -45,40 +126,68 @@ video{
 }
 
 .image_slideshow img {
-    /* 모든 이미지를 컨테이너의 왼쪽 상단에 겹치도록 배치 */
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;  /* 컨테이너 너비에 100% 맞춤 */
-    height: 100%; /* 컨테이너 높이에 100% 맞춤 */
-    object-fit: cover; /* 비율이 다른 이미지가 와도 잘리지 않고 꽉 채움 */
+    width: 100%; 
+    height: 100%; 
+    object-fit: contain; 
     
-    opacity: 0; /* 처음에는 모든 이미지를 투명하게 */
+    opacity: 0; 
 
     animation-name: fadeEffect;
-    animation-duration: 20s; /* 2초 * 이미지 10장 */
+    animation-duration: 18s;
     animation-iteration-count: infinite;
 }
 
 @keyframes fadeEffect {
     0% { opacity: 0; }
-    5% { opacity: 1; }   /* 1초(20초의 5%)만에 나타남 */
-    10% { opacity: 1; }  /* 2초(20초의 10%)까지 유지 */
-    15% { opacity: 0; }  /* 3초(20초의 15%)까지 사라짐 */
+    2% { opacity: 1; }   
+    14% { opacity: 1; }  
+    16% { opacity: 0; }  
     100% { opacity: 0; }
 }
 
+#bike_text p:nth-child(1){ animation-delay: 0s; }
+#bike_text p:nth-child(2){ animation-delay: 3s; }
+#bike_text p:nth-child(3){ animation-delay: 6s; }
+#bike_text p:nth-child(4){ animation-delay: 9s; }
+#bike_text p:nth-child(5){ animation-delay: 12s; }
+#bike_text p:nth-child(6){ animation-delay: 15s; }
+
 .image_slideshow img:nth-child(1) { animation-delay: 0s; }
-.image_slideshow img:nth-child(2) { animation-delay: 2s; }
-.image_slideshow img:nth-child(3) { animation-delay: 4s; }
-.image_slideshow img:nth-child(4) { animation-delay: 6s; }
-.image_slideshow img:nth-child(5) { animation-delay: 8s; }
-.image_slideshow img:nth-child(6) { animation-delay: 10s; }
-.image_slideshow img:nth-child(7) { animation-delay: 12s; }
-.image_slideshow img:nth-child(8) { animation-delay: 14s; }
-.image_slideshow img:nth-child(9) { animation-delay: 16s; }
-.image_slideshow img:nth-child(10) { animation-delay: 18s; }
+.image_slideshow img:nth-child(2) { animation-delay: 3s; }
+.image_slideshow img:nth-child(3) { animation-delay: 6s; }
+.image_slideshow img:nth-child(4) { animation-delay: 9s; }
+.image_slideshow img:nth-child(5) { animation-delay: 12s; }
+.image_slideshow img:nth-child(6) { animation-delay: 15s; }
+
 
 footer{
+    padding: 15px;
+    background-color: #212121;
     text-align: center;
+}
+footer p{
+    color:whitesmoke;
+    margin:0;
+}
+#input{
+    margin:0;
+    width: 100%;
+    text-align: center;
+    background-image: url('background.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+#input h1{
+    margin:0;
+}
+#input p{
+    border-radius: 25px;
+    display:inline-block;
+    padding: 5% 5%;
+    background-color: #212121;
+    color: whitesmoke;
 }
