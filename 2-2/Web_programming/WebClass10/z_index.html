@@ -1,0 +1,31 @@
+<head>
+    <style>
+        #box1{
+            position: absolute;
+            top: 0px;left: 0px;
+            width: 100px; height: 100px;
+            background-color: blue;
+            z-index: 2;
+        }
+        #box2{
+            position: absolute;
+            top: 30px;left: 30px;
+            width: 100px; height: 100px;
+            background-color: yellow;
+            z-index: 1;
+        }
+        #box3{
+            position: absolute;
+            top: 60px;left: 60px;
+            width: 100px; height: 100px;
+            background-color: green;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1">box #1</div>
+    <div id="box2">box #2</div>
+    <div id="box3">box #3</div>
+</body>
+<!-- z-index에서 값이 클 수록 위로 옴. 같으면 늦게 온 것이 더 위로 오는듯?-->

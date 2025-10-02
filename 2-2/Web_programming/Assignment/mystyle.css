@@ -1,0 +1,84 @@
+body{
+    background-color: rgb(200, 200, 200);
+}
+header{
+    display:block;
+    background-color: #212121;
+    max-width: 100%;
+    text-align: center;
+}
+header a{
+    color:white;
+    text-align: center;
+    padding: auto;
+}
+nav ul{
+    list-style: none;
+    text-align: center;
+    padding: 10px 0;
+}
+nav ul li{
+    display:inline;
+    text-transform: uppercase;
+    padding:0 10px;
+
+}
+nav ul li a{
+    color:black;
+}
+#bike_video{
+    text-align: center;
+}
+video{
+    border-radius: 25px;
+    width:90%;
+}
+.image_slideshow {
+    position: relative; /* 이미지들의 position: absolute 기준점 역할 */
+    width: 90%;         /* 화면 너비의 90%를 차지 */
+    max-width: 1200px;  /* 아무리 큰 화면에서도 최대 1200px을 넘지 않게 */
+    margin: 50px auto;  /* 위아래 여백 50px, 좌우는 자동으로 중앙 정렬 */
+
+    /* 가로세로 비율을 유지하는 기법 (16:9 비율 예시) */
+    height: 0;
+    padding-top: 56.25%; /* 너비의 56.25% 만큼 높이를 만듦 (9 / 16 * 100) */
+}
+
+.image_slideshow img {
+    /* 모든 이미지를 컨테이너의 왼쪽 상단에 겹치도록 배치 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;  /* 컨테이너 너비에 100% 맞춤 */
+    height: 100%; /* 컨테이너 높이에 100% 맞춤 */
+    object-fit: cover; /* 비율이 다른 이미지가 와도 잘리지 않고 꽉 채움 */
+    
+    opacity: 0; /* 처음에는 모든 이미지를 투명하게 */
+
+    animation-name: fadeEffect;
+    animation-duration: 20s; /* 2초 * 이미지 10장 */
+    animation-iteration-count: infinite;
+}
+
+@keyframes fadeEffect {
+    0% { opacity: 0; }
+    5% { opacity: 1; }   /* 1초(20초의 5%)만에 나타남 */
+    10% { opacity: 1; }  /* 2초(20초의 10%)까지 유지 */
+    15% { opacity: 0; }  /* 3초(20초의 15%)까지 사라짐 */
+    100% { opacity: 0; }
+}
+
+.image_slideshow img:nth-child(1) { animation-delay: 0s; }
+.image_slideshow img:nth-child(2) { animation-delay: 2s; }
+.image_slideshow img:nth-child(3) { animation-delay: 4s; }
+.image_slideshow img:nth-child(4) { animation-delay: 6s; }
+.image_slideshow img:nth-child(5) { animation-delay: 8s; }
+.image_slideshow img:nth-child(6) { animation-delay: 10s; }
+.image_slideshow img:nth-child(7) { animation-delay: 12s; }
+.image_slideshow img:nth-child(8) { animation-delay: 14s; }
+.image_slideshow img:nth-child(9) { animation-delay: 16s; }
+.image_slideshow img:nth-child(10) { animation-delay: 18s; }
+
+footer{
+    text-align: center;
+}
