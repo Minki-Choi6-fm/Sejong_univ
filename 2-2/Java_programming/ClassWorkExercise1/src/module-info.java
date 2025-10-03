@@ -1,8 +1,0 @@
-/**
- * 
- */
-/**
- * 
- */
-module ClassWorkExercise1 {
-}
