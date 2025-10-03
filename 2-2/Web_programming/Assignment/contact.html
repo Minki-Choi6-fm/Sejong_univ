@@ -11,8 +11,8 @@
         <nav>
             <ul>
                 <li><a href="index.html">디자인</a></li>
-                <li><a href="specs.html">제원</a></li>
                 <li><a href="tech.html">핵심 기술</a></li>
+                <li><a href="specs.html">제원</a></li>
                 <li><a href="price.html">가격</a></li>
                 <li><a href="contact.html">시승 신청</a></li>
             </ul>
@@ -21,17 +21,31 @@
                 <h1>시승 상담/신청</h1>
                 <h3>개인정보입력</h3>
                 <form action="submit_success.html" method="get">
-                    <p>
-                    이름:   <input type="text" required><br>
-                    전화번호: <input type="tel" name="tel" required pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" title="###-####-####" required><br>
-                    날짜:   <input type="date" required><br>
-                    선호지점:   <select name="cars" required>                    
-                                <option value="yongsan">용산</option>
-                                <option value="gangnam">강남</option>
-                                <option value="busan">부산</option>
-                                <option value="daegu">대구</option>
-                            </select><br>             
-                    </p>
+                    <table>
+                        <tr>
+                            <td><label for="name">이름:</label></td>
+                            <td><input type="text" id="name" name="user_name" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="phone">전화번호:</label></td>
+                            <td><input type="tel" id="phone" name="user_phone" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" title="###-####-####" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="date">날짜:</label></td>
+                            <td><input type="date" id="date" name="test_date" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="location">선호지점:</label></td>
+                            <td>
+                                <select id="location" name="location" required>
+                                    <option value="yongsan">용산</option>
+                                    <option value="gangnam">강남</option>
+                                    <option value="busan">부산</option>
+                                    <option value="daegu">대구</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
                     <div class="agreement">
                         <input type="checkbox" id="agree1" name="agree1" required>
                         <label for="agree1">개인정보 수집 및 이용동의 (필수)</label><br>

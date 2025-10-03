@@ -1,7 +1,8 @@
-body{
+body {
     background-color: rgb(200, 200, 200);
-    margin:0px;
+    margin: 0px;
 }
+
 header {
     background-color: #212121;
     width: 100%;
@@ -29,165 +30,370 @@ header a img {
     width: auto;
     margin-right: 1%;
 }
-nav{
+
+nav {
     background-color: rgb(101, 101, 101);
 }
-nav ul{
+
+nav ul {
     list-style: none;
     text-align: center;
-    padding:10px 0;
-    margin:0px;
+    padding: 10px 0;
+    margin: 0px;
 }
-nav ul li{
-    display:inline;
+
+nav ul li {
+    display: inline;
     text-transform: uppercase;
-    padding:0 50px;
-
+    padding: 0 20px;
 }
-nav ul li a{
-    color:whitesmoke;
+
+nav ul li a {
+    color: whitesmoke;
     text-decoration: none;
-    position: relative;
-    
 }
-#right_side{
-    position:fixed;
-    height: 10%;
-    width: 5%;
 
-    top:40%;
-    right:2%;
+#right_side {
+    position: fixed;
+    top: 40%;
+    right: 2%;
+    width: 100px;
     background-color: rgb(98, 98, 98);
     border-radius: 5px;
     box-shadow: 1px 1px 8px black;
-}
-#right_side a{
-    color:whitesmoke;
+    padding: 10px;
+    box-sizing: border-box;
     text-align: center;
-    font-size: 1.2em;
-    text-decoration:none;
-    font-weight: bold;
 }
-#main_page img{
-    width:100%;
-    height:auto;
-}
-#main_page div{
-    position:absolute;
-    top: 50%;
-    right: 5%;
-    transform: translateY(-50%);
 
+#right_side a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+#right_side p {
+    font-size: 1em;
+    font-weight: bold;
+    margin: 0;
+}
+
+#main_page {
+    position: relative;
+}
+
+#main_page img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#context {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
     text-align: right;
-    color:whitesmoke;
-    font-size:2.0em;
+    color: whitesmoke;
     text-shadow: 2px 2px 8px black;
 }
-#bike_video{
+
+#context h2 {
+    font-size: 2.5em;
+    margin: 0;
+    line-height: 1.2;
+}
+
+#context p {
+    font-size: 1em;
+    margin: 0;
+}
+
+#bike_video {
     padding: 10% 0;
     text-align: center;
 }
-video{
+
+video {
     border-radius: 25px;
-    width:80%;
+    width: 80%;
 }
-#bike_image{
+
+#bike_image {
     background-color: rgb(184, 184, 184);
-    margin:0;
+    margin: 0;
+    padding: 50px 0;
 }
-#bike_text{
-    top:50px;
-    position: relative;
+
+#bike_text {
     text-align: center;
     font-size: 2em;
     text-shadow: 2px 2px 4px rgb(145, 145, 145);
+    height: 100px;
+    position: relative;
+    margin-bottom: 30px;
 }
-#bike_text p{
-    position:absolute;
+
+#bike_text p {
+    position: absolute;
     left: 50%;
-    top: 150%;
-    transform: translate(-50%,-50%);
-    align-items: center;
-
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    margin-top: 50px;
     opacity: 0;
-
     animation-name: fadeEffect;
     animation-duration: 18s;
     animation-iteration-count: infinite;
 }
-.image_slideshow {
-    position: relative; /* 이미지들의 position: absolute 기준점 역할 */
-    width: 70%;         /* 화면 너비의 100%를 차지 */
-    margin: 0 auto;  /* 위아래 여백 0, 좌우는 자동으로 중앙 정렬 */
 
-    /* 가로세로 비율을 유지하는 기법 (16:9 비율 예시) */
+.slideshow-area {
+    overflow: hidden;
+}
+
+#color_chip {
+    float: left;
+    width: 19%;
+    padding: 0 5%;
+    box-sizing: border-box;
+}
+
+#color_chip img {
+    padding: -50px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+    animation-name: popup;
+    animation-duration: 18s;
+    animation-iteration-count: infinite;
+}
+
+.image_slideshow {
+    float: right;
+    width: 75%;
+    padding-right: 5%;
+    box-sizing: border-box;
+}
+
+.slideshow-wrapper {
+    position: relative;
+    width: 100%;
     height: 0;
-    padding-top: 56.25%; /* 너비의 56.25% 만큼 높이를 만듦 (9 / 16 * 100) */
+    padding-top: 56.25%;
 }
 
 .image_slideshow img {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%; 
-    height: 100%; 
-    object-fit: contain; 
-    
-    opacity: 0; 
-
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
     animation-name: fadeEffect;
     animation-duration: 18s;
     animation-iteration-count: infinite;
 }
 
+@keyframes popup {
+    0% { transform: scale(1); }
+    2% { transform: scale(1.5); }
+    14% { transform: scale(1.5); }
+    16% { transform: scale(1); }
+    100% { transform: scale(1); }
+}
+
 @keyframes fadeEffect {
     0% { opacity: 0; }
-    2% { opacity: 1; }   
-    14% { opacity: 1; }  
-    16% { opacity: 0; }  
+    2% { opacity: 1; }
+    14% { opacity: 1; }
+    16% { opacity: 0; }
     100% { opacity: 0; }
 }
 
-#bike_text p:nth-child(1){ animation-delay: 0s; }
-#bike_text p:nth-child(2){ animation-delay: 3s; }
-#bike_text p:nth-child(3){ animation-delay: 6s; }
-#bike_text p:nth-child(4){ animation-delay: 9s; }
-#bike_text p:nth-child(5){ animation-delay: 12s; }
-#bike_text p:nth-child(6){ animation-delay: 15s; }
+#bike_text p:nth-child(1), #color_chip img:nth-child(1), .image_slideshow img:nth-child(1) { animation-delay: 0s; }
+#bike_text p:nth-child(2), #color_chip img:nth-child(2), .image_slideshow img:nth-child(2) { animation-delay: 3s; }
+#bike_text p:nth-child(3), #color_chip img:nth-child(3), .image_slideshow img:nth-child(3) { animation-delay: 6s; }
+#bike_text p:nth-child(4), #color_chip img:nth-child(4), .image_slideshow img:nth-child(4) { animation-delay: 9s; }
+#bike_text p:nth-child(5), #color_chip img:nth-child(5), .image_slideshow img:nth-child(5) { animation-delay: 12s; }
+#bike_text p:nth-child(6), #color_chip img:nth-child(6), .image_slideshow img:nth-child(6) { animation-delay: 15s; }
 
-.image_slideshow img:nth-child(1) { animation-delay: 0s; }
-.image_slideshow img:nth-child(2) { animation-delay: 3s; }
-.image_slideshow img:nth-child(3) { animation-delay: 6s; }
-.image_slideshow img:nth-child(4) { animation-delay: 9s; }
-.image_slideshow img:nth-child(5) { animation-delay: 12s; }
-.image_slideshow img:nth-child(6) { animation-delay: 15s; }
-
-
-footer{
+footer {
+    clear: both;
     padding: 15px;
     background-color: #212121;
     text-align: center;
 }
-footer p{
-    color:whitesmoke;
-    margin:0;
+
+footer p {
+    color: whitesmoke;
+    margin: 0;
 }
-#input{
-    margin:0;
-    width: 100%;
-    text-align: center;
+
+#input {
+    margin: 0;
+    padding: 100px 0;
     background-image: url('background.jpg');
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
+    background-attachment: fixed;
 }
-#input h1{
-    margin:0;
+
+#input h1, #input h3 {
+    text-align: center;
+    margin: 0;
+    color: whitesmoke;
+    text-shadow: 1px 1px 5px black;
 }
-#input p{
-    border-radius: 25px;
-    display:inline-block;
-    padding: 5% 5%;
+
+#input h3 {
+    margin-top: 5px;
+}
+
+#input form {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: 50px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#input table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#input table td {
+    padding-bottom: 15px;
+}
+
+#input table td:first-child {
+    width: 120px;
+    text-align: left;
+    padding-right: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+#input input[type="text"],
+#input input[type="tel"],
+#input input[type="date"],
+#input select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+#input input:focus,
+#input select:focus {
+    border-color: #212121;
+    outline: none;
+}
+
+.agreement {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.agreement label {
+    font-size: 0.9em;
+}
+
+#input input[type="submit"] {
+    width: 100%;
     background-color: #212121;
     color: whitesmoke;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#input input[type="submit"]:hover {
+    background-color: #555555;
+}
+
+/*specs*/
+
+#specs {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
+
+#specs h1, #specs h2, #specs h3 {
+    text-align: center;
+    color: #333;
+    margin-top: 0;
+}
+
+#specs h1 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+#specs h2 {
+    font-size: 2em;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+#specs h3 {
+    text-align: left;
+    background-color: #555;
+    color: whitesmoke;
+    padding: 8px;
+    margin-top: 40px;
+    font-size: 1.2em;
+}
+
+.pictogram{
+    width: 20%;
+}
+
+.spec-summary table {
+    width: 100%;
+    border-spacing: 10px;
+    margin-bottom: 50px;
+}
+
+.spec-summary td {
+    width: 33.33%;
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    vertical-align: top;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px black;
+}
+
+.spec-details table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.spec-details td {
+    padding: 12px 8px;
+    border-bottom: 1px solid #dadada;
+}
+
+.spec-details tr:nth-child(even) {
+    background-color: rgb(200, 200, 200);
+}
+
+.spec-details td:first-child {
+    font-weight: bold;
+    width: 30%;
 }
