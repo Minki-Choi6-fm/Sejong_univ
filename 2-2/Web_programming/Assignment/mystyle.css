@@ -491,6 +491,7 @@ footer p {
     position:relative;
     left:20%;    
     font-size: 1.2em;
+    color: #333;
 }
 #engine img{
     position:relative;
@@ -509,7 +510,7 @@ footer p {
     text-align: center;
     display: inline-block;
     margin: 0 50px;
-    color:black;
+    color: #333;
     width: 256px;
     height: 144px;
     border-radius: 5px;
@@ -520,13 +521,13 @@ footer p {
     padding: 0 27px;
     width: 80%;
 }
+
+#chassis{
+    background-color:  rgb(230, 230, 230);
+}
 #chassis, #modern {
     padding: 50px 10%;
     overflow: hidden; 
-}
-
-#modern {
-    background-color: rgb(230, 230, 230);
 }
 
 .tech-image-area {
@@ -559,7 +560,7 @@ footer p {
     width: 100%;
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 10px rgb(0,0,0);
 }
 
 .tech-context-area h2 {
@@ -583,7 +584,7 @@ footer p {
 }
 
 .tech-context-area li::before {
-    content: "✔";
+    content: ">";
     color: #212121;
     position: absolute;
     left: 0;
