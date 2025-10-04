@@ -55,7 +55,7 @@ nav ul li a {
 
 #right_side {
     position: fixed;
-    top: 40%;
+    bottom: 40%;
     right: 2%;
     width: 100px;
     background-color: rgb(98, 98, 98);
@@ -231,6 +231,8 @@ footer p {
     margin: 0;
 }
 
+/*contact*/
+
 #input {
     margin: 0;
     padding: 100px 0;
@@ -253,12 +255,12 @@ footer p {
 }
 
 #input form {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgb(230, 230, 230);
     padding: 30px;
     border-radius: 10px;
     max-width: 500px;
     margin: 50px auto;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgb(0, 0, 0);
 }
 
 #input table {
@@ -396,4 +398,193 @@ footer p {
 .spec-details td:first-child {
     font-weight: bold;
     width: 30%;
+}
+
+/*price*/
+
+#price-list {
+    width: 900px;
+    margin: 50px auto;
+}
+
+#price-list h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.price-item {
+    background-color: #f0f0f0;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px rgb(0,0,0);
+    overflow: hidden;
+}
+
+.price-item-image {
+    float: left;
+    width: 55%;
+}
+
+.price-item-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.price-item-info {
+    float: right;
+    width: 40%;
+}
+
+.color-info {
+    margin-bottom: 20px;
+}
+
+.color-chip-small {
+    width: 40px;
+    height: 30px;
+    border-radius: 20%;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+}
+
+.price-item-info h3 {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+}
+
+.price-tag {
+    font-size: 2em;
+    font-weight: bold;
+    color: #212121;
+    margin: 20px 0;
+}
+
+.price-button {
+    display: block;
+    width: 100%;
+    background-color: #212121;
+    color: whitesmoke;
+    text-align: center;
+    padding: 15px 0;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.price-button:hover {
+    background-color: #555555;
+}
+
+/*tech*/
+
+#engine_context{
+    width: 60%;
+    margin-top:75px;
+    position:relative;
+    left:20%;    
+    font-size: 1.2em;
+}
+#engine img{
+    position:relative;
+    left:50%;
+    margin: 50px 0;
+    transform: translate(-50%);
+
+    width: 40%;
+}
+#engine_box_frame{
+    text-align: center;
+    margin: 50px 0;
+}
+.engine_box{
+    vertical-align: top;
+    text-align: center;
+    display: inline-block;
+    margin: 0 50px;
+    color:black;
+    width: 256px;
+    height: 144px;
+    border-radius: 5px;
+    background-color: #b8b8b8;
+    box-shadow: 1px 1px 1px rgb(168, 168, 168);
+}
+.engine_box p{
+    padding: 0 27px;
+    width: 80%;
+}
+#chassis, #modern {
+    padding: 50px 10%;
+    overflow: hidden; 
+}
+
+#modern {
+    background-color: rgb(230, 230, 230);
+}
+
+.tech-image-area {
+    width: 45%;
+}
+
+.tech-context-area {
+    width: 55%;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+#chassis .tech-image-area {
+    float: right;
+}
+
+#chassis .tech-context-area {
+    float: left;
+}
+
+#modern .tech-image-area {
+    float: left;
+}
+
+#modern .tech-context-area {
+    float: right;
+}
+
+.tech-image-area img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.tech-context-area h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.tech-context-area ul {
+    list-style: none;
+    padding: 0;
+}
+
+.tech-context-area li {
+    font-size: 1.2em;
+    color: #444;
+    margin-bottom: 15px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.tech-context-area li::before {
+    content: "✔";
+    color: #212121;
+    position: absolute;
+    left: 0;
 }
