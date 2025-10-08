@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="14a230ba-76db-4922-a471-f158dd186517" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/../Assignment1/Assignment1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Assignment1/src/ch1/Q1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ClassWorkExercise1/.classpath" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ClassWorkExercise1/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ClassWorkExercise1/.project" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ClassWorkExercise1/.settings/org.eclipse.core.resources.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ClassWorkExercise1/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ClassWorkExercise1/src/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Algorithm/Week6_Merge_Quick_Sort/Week6_Merge_Quick_Sort.xcodeproj/project.xcworkspace/xcuserdata/allonso77.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/../../Algorithm/Week6_Merge_Quick_Sort/Week6_Merge_Quick_Sort.xcodeproj/project.xcworkspace/xcuserdata/allonso77.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Algorithm/Week6_Merge_Quick_Sort/Week6_Merge_Quick_Sort.xcodeproj/xcuserdata/allonso77.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/../../Algorithm/Week6_Merge_Quick_Sort/Week6_Merge_Quick_Sort.xcodeproj/xcuserdata/allonso77.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +24,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -65,8 +62,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26830.84" />
-        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.26830.84" />
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.23774.435" />
+        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-IU-251.23774.435" />
       </set>
     </attachedChunks>
   </component>
@@ -79,6 +76,9 @@
       <updated>1759459535910</updated>
       <workItem from="1759459536865" duration="851000" />
       <workItem from="1759461547047" duration="1620000" />
+      <workItem from="1759902502443" duration="252000" />
+      <workItem from="1759904144931" duration="697000" />
+      <workItem from="1759906565006" duration="2312000" />
     </task>
     <servers />
   </component>
