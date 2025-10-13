@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1 id="test"></h1>
+        <script>
+            let x;
+            document.writeln(x+"<br>");
+            document.write(typeof x + "<br><br>");
+            let y=7;
+            let z=x+y;
+
+            document.getElementById("test").innerHTML=z;//innerHTML은 현재는 h1 저 두 괄호 사이를 나타냄
+
+            x=8;
+            document.writeln(x+"<br>");
+            document.write(typeof x + "<br><br>");
+            y=7;
+            z=x+y;
+
+            let p='car'+1+2+3+4+5;
+            let q=1+2+3+'car'+4+5
+            document.write(p+'<br>');
+            document.write(q);
+
+            document.getElementById("test").innerHTML=z;//innerHTML은 현재는 h1 저 두 괄호 사이를 나타냄
+        </script>
+    </body>
+</html>
