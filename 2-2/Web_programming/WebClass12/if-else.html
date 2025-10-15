@@ -1,0 +1,17 @@
+<body>
+    <h2 id="test1"></h2>
+    <h2 id="test2"></h2>
+
+    <script>
+        let time=new Date().getHours();
+        let msg;
+
+        document.getElementById("test1").innerHTML="time="+time;
+        if(time<12){
+            msg="Good Morning";
+        }else{
+            msg="Good Afternoon";
+        }
+        document.getElementById("test2").innerHTML=msg;
+    </script>
+</body>

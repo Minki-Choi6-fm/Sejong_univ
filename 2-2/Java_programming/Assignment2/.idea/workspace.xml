@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="14a230ba-76db-4922-a471-f158dd186517" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Algorithm/Week7_Dictionary/Week7_Dictionary.xcodeproj/project.xcworkspace/xcuserdata/allonso77.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/../../Algorithm/Week7_Dictionary/Week7_Dictionary.xcodeproj/project.xcworkspace/xcuserdata/allonso77.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Web_programming/WebClass11/sum_program.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../Web_programming/WebClass11/sum_program.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +77,7 @@
       <workItem from="1759902502443" duration="252000" />
       <workItem from="1759904144931" duration="697000" />
       <workItem from="1759906565006" duration="2312000" />
+      <workItem from="1760405303039" duration="757000" />
     </task>
     <servers />
   </component>

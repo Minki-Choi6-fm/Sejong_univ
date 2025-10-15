@@ -3,19 +3,25 @@
 </head>
 <body>
     <h1>덧셈 계산기</h1>
+    <form>
+        첫번째 정수: <input id="first"><br>
+        두번째 정수: <input id="second"><br>
+        합계: <input id="sum"><br>
+        <button onclick="calculate()" type="button">계산</button>
+    </form>
+    <script>
+        function calculate()
+        {
+            let x=document.getElementById('first');
+            let y=document.getElementById('second');
+            let sum=document.getElementById('sum');
+            
+            let x_elem=parseInt(x.value);
+            let y_elem=parseInt(y.value);
 
-    첫번째 정수: <input id="first"><br>
-    두번째 정수: <input id="second"><br>
-    합계: <input id="sum"><br>
+            let z=x_elem+y_elem;
+            sum.value=z;
+        }
+    </script>
 
-    function sum()
-    {
-        let x=parseInt(getElementById(first));
-        let y=parseInt(getElementById(second));
-
-        let z=x+y;
-        parseInt(g)
-    }
-
-    <button onclick="sum()">계산</button>
 </body>
