@@ -1,0 +1,26 @@
+<body>
+    <h2 id="test"></h2>
+    <script>
+        function sub(){
+            let now=new Date();
+            let christmas=new Date(2025,12,25);
+
+            let difference=christmas-now;
+
+            let milliseconds=Math.floor(difference % 1000);
+            difference/=1000;
+            let seconds=Math.floor(difference % 60);
+            difference/=60;
+            let minutes=Math.floor(difference % 60);
+            difference/=60;
+            let hours=Math.floor(difference % 24);
+            difference/=24;
+            let days=Math.floor(difference);
+
+            let str="금년 크리스마스까지 "+days+"일, "+hours+"시간, "+minutes+"분, "+seconds+"초 남았습니다.";
+            document.getElementById('test').innerHTML=str;
+            setTimeout("sub()",1000);
+        }
+        sub();
+    </script>
+</body>

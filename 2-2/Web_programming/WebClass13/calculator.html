@@ -1,0 +1,26 @@
+<body>
+   입력: <input id="input"><br>
+   계산 결과: <input id="result" readonly><br>
+   <button onclick="cal(1)">SIN</button>
+   <button onclick="cal(2)">LOG</button>
+   <button onclick="cal(3)">SQRT</button>
+   <button onclick="cal(4)">ABS</button>   
+   <script>
+        function cal(type){
+            let x=parseFloat(document.getElementById('input').value);
+            if (type==1){
+                y=Math.sin((x*Math.PI)/180.0);
+            }
+            else if (type==2){
+                y=Math.log(x);
+            }
+            else if (type==3){
+                y=Math.sqrt(x);
+            }
+            else if (type==4){
+                y=Math.abs(x);
+            }
+            document.getElementById('result').value=y;
+        }
+   </script>
+</body>
