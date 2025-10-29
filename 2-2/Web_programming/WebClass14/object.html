@@ -1,0 +1,24 @@
+<script>
+
+    let MyCar=new Object();
+    MyCar.model="520d";
+    MyCar.speed=60;
+    MyCar.color="red";
+
+    MyCar.brake=function(){this.speed-=10;};
+    MyCar.accel=function(){this.speed+=10;};            //객체 만들기 방법 1
+    
+    let Car={
+        model:"520d",
+        speed:60,
+        color:"red",
+
+        brake:function(){this.speed-=10;},
+        accel:function(){this.speed+=10;},
+    }                                                   //객체 만들가 방법 2
+
+    document.writeln(Car.model+"<br>");
+    Car.color="yellow";
+    Car.brake();
+    document.writeln(Car.speed+"<br>");
+</script>

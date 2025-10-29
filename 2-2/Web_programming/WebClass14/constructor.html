@@ -1,0 +1,20 @@
+<script>
+    function Car(model,speed,color){
+        this.model=model;
+        this.speed=speed;
+        this.color=color;
+    
+        this.brake=function(){this.speed-=10};
+        this.accel=function(){this.speed+=10};
+    }
+
+    myCar=new Car('Avante',20,'white');
+    yourCar=new Car('K5',70,'black');
+
+    document.write(myCar.model+":"+myCar.color+"<br>");
+    document.write(yourCar.model+":"+yourCar.color+"<br>");
+
+    myCar.accel();
+
+    document.write(myCar.speed);
+</script>

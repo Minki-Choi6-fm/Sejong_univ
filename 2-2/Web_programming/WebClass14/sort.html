@@ -1,0 +1,13 @@
+<body>
+    <script>
+        let x=["banana","apple","orange","melon"];
+        let y=[10,7,23,99,169,19,11,1];
+
+        x.sort();
+        document.writeln(x+"<br>");
+        y.sort();
+        document.writeln(y+"<br>");                    //숫자는 순서가 사전 순?(1,10,169,2)이런 식으로 나옴
+        y.sort(function(a,b){return a-b});             //이렇게 하면 크기 순으로 나옴
+        document.writeln(y);
+    </script>
+</body>

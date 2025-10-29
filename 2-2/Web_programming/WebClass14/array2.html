@@ -1,0 +1,25 @@
+<body>
+    <script>
+        let x=[1,2,3];
+        let y=[4,5,6];
+        let z=x.concat(y);
+
+        z.push(10);                                 //push pop은 스택 (배열 뒤에서 작동)
+        document.write(z+"<br>");
+        document.write(z.indexOf(4)+"<br>");
+
+        for(i=0;i<3;i++){
+            document.write(z.pop()+" ");
+        }
+        document.write("<br>"+z+"<br><br>");
+
+        z.unshift(10);                              //unshift, shift도 스택 (배열 앞에서 작동)
+        document.write(z+"<br>");
+
+        for(i=0;i<3;i++){
+            document.write(z.shift()+" ");
+        }
+        document.write("<br>"+z+"<br><br>");
+
+    </script>
+</body>

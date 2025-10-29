@@ -1,0 +1,22 @@
+<body>
+    <script>
+        function printArray(a){
+            document.write("[");
+            for(let i=0;i<a.length;i++)
+                document.write(a[i]+" ");
+            document.write("]<br>");
+        }
+        let arr=new Array();
+        arr[0]="apple";
+        arr[1]="banana";
+        arr[2]="orange";
+
+        let arr2=new Array("peach","pineapple","mandarin");
+
+        let arr3=["melon","watermelon",123,[1,2,3]];
+
+        printArray(arr);
+        printArray(arr2);
+        printArray(arr3);
+    </script>
+</body>
