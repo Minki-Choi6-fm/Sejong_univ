@@ -1,0 +1,18 @@
+<head>
+    <script>
+        let msg="";
+        function test(){
+            try{
+                alert("Hello World!");                      //이쪽에 문제가 없으면 이쪽 것이 실행되고 문제가 있으면 catch문이 실행됨
+            }
+            catch(error){
+                msg="다음과 같은 오류가 발생하였음: "+error.message;
+                alert(msg);
+            }
+        }
+    </script>
+    
+</head>
+<body>
+    <input type="button" onclick="test()" value="try-catch 테스트">
+</body>

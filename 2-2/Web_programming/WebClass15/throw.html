@@ -1,0 +1,24 @@
+<body>
+    <script>
+        let solution=Math.floor(Math.random()*100+1);
+        function test(){
+            try{
+                let x=document.getElementById("number").value;
+                if(x=="")throw "입력 없음";
+                if(isNaN(x))throw "숫자가 아님";
+                if(x>solution)throw "너무 큼";
+                if(x<solution)throw "너무 작음";
+                if(x==solution)throw "성공";                    //throw는 오류 메세지를 던지는 것?이라고 해야하나
+            }                                                  //교수님이 아주 시험문제로 내기 딱 좋은 부분이라 함
+            catch(error){
+                let y=document.getElementById("message");
+                y.innerHTML="힌트: "+error;
+            }
+        }
+    </script>
+    <h1>Number Guess</h1>
+    <p>1부터 100 사이의 숫자를 입력하시오.</p>
+    <input id="number" type="text">
+    <button type="button" onclick="test()">숫자 추측</button>
+    <p id="message"></p>
+</body>

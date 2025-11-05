@@ -1,0 +1,13 @@
+<body>
+    <h2>children 속성 텍스트</h2>
+    <p>body 요소의 자식 요소들</p>
+    <p id="test"></p>
+    <script>
+        let collection=document.body.children;
+        let s="";
+        for(i=0;i<collection.length;i++){
+            s+=collection[i].tagName+"<br>";
+        }
+        document.getElementById("test").innerHTML=s;
+    </script>
+</body>
