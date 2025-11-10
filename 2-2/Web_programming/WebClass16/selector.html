@@ -1,0 +1,14 @@
+<body>
+    <p class="c1">First</p>
+    <p class="c1">Second</p>
+    <p class="c2">Third</p>
+
+    <p id="test"></p>
+    <script>
+        let arr=document.querySelectorAll("p.c1");
+        for(let i=0;i<arr.length;i++){
+            document.write(arr[i].innerHTML+"<br>");
+        }
+        document.getElementById("test").innerHTML='첫번째 요소는: '+arr[0].innerHTML;
+    </script>
+</body>

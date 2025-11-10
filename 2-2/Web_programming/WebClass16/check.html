@@ -1,0 +1,17 @@
+<head>
+    <script>
+        function sub(){
+            if(document.getElementById("test").checked){
+                document.getElementById("result").value="동의하셨습니다.";
+            }
+            else{
+                document.getElementById("result").value="동의하지 않으셨습니다.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="checkbox" id="test">동의합니다.<br>
+    <input type="button" onclick="sub()" value="Click">
+    <input type="text" id="result">
+</body>

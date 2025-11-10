@@ -1,0 +1,30 @@
+<body>
+    <div>
+        <p>Fruit Lists</p>
+        <ul>
+            <li>Apple</li>
+            <li>Orange</li>
+            <li>Grape</li>
+        </ul>
+    </div>
+
+    <script>
+        let myDiv=document.getElementsByTagName('div')[0];
+        let elems=myDiv.childNodes;
+
+        for(i=0;i<elems.length;i++){
+            document.write(elems[i].nodeName+"<br>");
+        }
+
+        let fruits=elems[3].childNodes;
+        for(i=0;i<fruits.length;i++){
+            document.write(fruits[i].textContent+"<br>");
+        }
+
+        let f=elems[3].firstChild;
+        while(f!=null){
+            document.write(f.textContent+"<br>");
+            f=f.nextSibling;
+        }
+    </script>
+</body>

@@ -1,0 +1,20 @@
+<body>
+    <h2>다크 모드와 라이트 모드</h2>
+    <p>버튼을 누르면 다크 모드와 라이트 모드가 토글됩니다.</p>
+    <button onclick="sub()">다크모드 토글</button>
+    <script>
+        let mode="white";
+        function sub(){
+            if(mode=="white"){
+                document.getElementsByTagName("body")[0].style.backgroundColor="black";
+                document.getElementsByTagName("body")[0].style.color="white";
+                mode="black";
+            }
+            else{
+                document.getElementsByTagName("body")[0].style.backgroundColor="white";
+                document.getElementsByTagName("body")[0].style.color="black";
+                mode="white";
+            }
+        }
+    </script>
+</body>
