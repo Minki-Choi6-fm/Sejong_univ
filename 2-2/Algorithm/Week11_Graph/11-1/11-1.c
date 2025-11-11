@@ -1,109 +1,65 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct AdjListNode {
-    int dest;
-    int weight;
-    struct AdjListNode* next;
-}AdjListNode;
+int Graph[7][7];                                //인접배열의 기초가 될 이중배열 선언
 
-typedef struct Graph {
-    int V;
-    struct AdjListNode** adjLists;
-}Graph;
-
-typedef struct Temp {
-    int dest;
-    int weight;
-}Temp;
-
-AdjListNode* createNode(int dest, int weight) {
-    AdjListNode* newNode = (AdjListNode*)malloc(sizeof(AdjListNode));
-    newNode->dest = dest;
-    newNode->weight = weight;
-    newNode->next = NULL;
-    return newNode;
-}
-
-Graph* createGraph(int V) {
-    Graph* graph = (Graph*)malloc(sizeof(Graph));
-    graph->V = V;
-
-    graph->adjLists = (AdjListNode**)malloc(V * sizeof(AdjListNode*));
-
-    for (int i = 0; i < V; ++i) {
-        graph->adjLists[i] = NULL;
-    }
-    return graph;
-}
-
-void addEdge(Graph* graph, int src, int dest, int weight) {
-    AdjListNode* newNode = createNode(dest, weight);
-    newNode->next = graph->adjLists[src];
-    graph->adjLists[src] = newNode;
-
-    if (src != dest) {
-        newNode = createNode(src, weight);
-        newNode->next = graph->adjLists[dest];
-        graph->adjLists[dest] = newNode;
-    }
-}
-int compare(const void* a, const void* b) {
-    Temp* nodeA = (Temp*)a;
-    Temp* nodeB = (Temp*)b;
-    return (nodeA->dest - nodeB->dest);
-}
-void printNode(Graph* graph,int num){
-    if(!graph->adjLists[num]){
+void addEdge(int src,int dest,int weight){      //addEdge 함수
+    if(src>6||src<1||dest>6||dest<1){           //잘못된 범위면
         printf("-1\n");
-        return;
+        return;                                 //종료
     }
-    int count=0;
-    AdjListNode *node=graph->adjLists[num];
-    while(node!=NULL){
-        count++;
-        node=node->next;
+    Graph[src][dest]=weight;                    //배열 수정, 인자를 가중치로 둠
+    if(src!=dest){                              //루프가 아니면
+        Graph[dest][src]=weight;                //다른쪽도 배열 수정
     }
-    Temp* tempArray = (Temp*)malloc(count * sizeof(Temp));
-    node = graph->adjLists[num];
-    for (int i = 0; i < count; i++) {
-        tempArray[i].dest = node->dest;
-        tempArray[i].weight = node->weight;
-        node = node->next;
-    }
-    qsort(tempArray, count, sizeof(tempArray), compare);
 }
-void fixEdge(Graph* graph,int src, int dest, int weight){
-    
+void printNode(int num){                        //printNode 함수
+    if(num<=6&&num>=1){                         //옳은 범위 안이면
+        int count=0;
+        for(int i=0;i<7;i++){
+            if(Graph[num][i]!=0){
+                printf("%d %d ",i,Graph[num][i]);   //인자가 있으면 오름차순으로 출력
+                count=1;
+            }
+        }
+        if(count==0){                           //인자가 없으면
+            printf("-1");                       //-1 출력
+        }
+    }
+    else{                                       //범위가 옳지 않으면
+        printf("-1");                           //-1 출력
+    }
+    printf("\n");
 }
-int main(void){
-    Graph* G=createGraph(7);
+
+int main(void) {                                //main 함수
     char c;
 
-    addEdge(G, 1, 2, 1);
-    addEdge(G, 1, 3, 1);
-    addEdge(G, 1, 4, 1);
-    addEdge(G, 1, 6, 2);
-    addEdge(G, 2, 3, 1);
-    addEdge(G, 3, 5, 4);
-    addEdge(G, 5, 5, 4);
-    addEdge(G, 5, 6, 3);
+    addEdge(1, 2, 1);
+    addEdge(1, 3, 1);
+    addEdge(1, 4, 1);
+    addEdge(1, 6, 2);
+    addEdge(2, 3, 1);
+    addEdge(3, 5, 4);
+    addEdge(5, 5, 4);
+    addEdge(5, 6, 3);                        //문제에 나온 그래프 미리 그려주기
     
-    while(1){
-        scanf("%c",&c);
-        if(c=='a'){
+    while (1) {
+        scanf(" %c", &c);
+        if (c == 'a') {                         //a 입력되면
             int num;
-            scanf("%d",&num);
-            printNode(G, num);
+            scanf("%d", &num);
+            printNode(num);                     //printNode 함수 호출
         }
-        if(c=='m'){
-            int a,b,w;
-            scanf("%d %d %d",&a,&b,&w);
-            fixEdge(G, a, b, w);
+        if (c == 'm') {                         //m 입력되면
+            int a, b, w;
+            scanf("%d %d %d", &a, &b, &w);
+            addEdge(a, b, w);                   //modifyEdge 함수 호출
         }
-        if(c=='q'){
-            break;
+        if (c == 'q') {                         //q 입력되면
+            break;                              //프로그램 종료
         }
     }
+    
     return 0;
 }
