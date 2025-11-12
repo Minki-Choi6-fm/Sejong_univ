@@ -1,0 +1,13 @@
+<body>
+    <div id="test" style="background-color: yellow;width: 200px;height: 150px;">마우스 올려보세요.</div>
+    <script>
+        let obj=document.getElementById("test");
+        obj.onmouseover=function(e){
+            x=e.clientX;
+            y=e.clientY;
+            alert(x+" "+y);
+            alert(e.type);
+            alert(e.target);
+        };
+    </script>
+</body>

@@ -16,6 +16,9 @@ public class Course {
         this.totalSeats = totalSeats;
         this.interestCount = interestCount;
     }
+    public void setInterestCount(int interestCount) {
+        this.interestCount = interestCount;
+    }
     public String getCourseCode() {
         return courseCode;
     }

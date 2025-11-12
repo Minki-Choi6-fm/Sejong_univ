@@ -4,14 +4,15 @@ public class Student {
     private String studentId;
     private String name;
     private String major;
-    private int currentSemester;
+    private int grade;
 
-    public Student(String studentId, String name, String major, int currentSemester) {
+    public Student(String studentId, String name, String major, int grade) {
         this.studentId = studentId;
         this.name = name;
         this.major = major;
-        this.currentSemester = currentSemester;
+        this.grade = grade;
     }
+
     public String getStudentId() {
         return studentId;
     }
@@ -21,7 +22,7 @@ public class Student {
     public String getMajor() {
         return major;
     }
-    public int getCurrentSemester() {
-        return currentSemester;
+    public int getGrade() {
+        return grade;
     }
 }

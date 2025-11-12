@@ -8,7 +8,6 @@ public class Utilize {
     private static final String DB_USER = "root";
     private static final String DB_PASSWORD = "jeff0620";
 
-    // Static block to load the MySQL JDBC driver
     static {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");

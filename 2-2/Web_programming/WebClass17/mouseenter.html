@@ -1,0 +1,38 @@
+<head>
+    <style>
+        div{
+            background-color: lightgreen;
+            width: 200px;
+            height: 200px;
+            display: inline-block;
+            margin:20px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="1" onmouseenter="func1(this)" onmouseleave="color(this)">mouseenter:0</div>
+    <div id="2" onmouseenter="func2(this)" onmouseleave="color(this)">mouseenter:0</div>
+    <div id="3" onmouseenter="func3(this)" onmouseleave="color(this)">mouseenter:0</div>
+    <script>
+        let x=0;let y=0;let z=0;
+        function func1(obj){
+            x++;
+            obj.innerHTML="mouseenter:"+x;
+            obj.style.backgroundColor="white";
+        }
+        function func2(obj){
+            y++;
+            obj.innerHTML="mouseenter:"+y;
+            obj.style.backgroundColor="white";
+        }
+        function func3(obj){
+            z++;
+            obj.innerHTML="mouseenter:"+z;
+            obj.style.backgroundColor="white";
+        }
+        function color(obj){
+            obj.style.backgroundColor="lightgreen";
+        }
+    </script>
+</body>
