@@ -9,9 +9,10 @@ typedef struct AdjListNode {
 typedef struct Graph {
     int V;
     AdjListNode** adjLists;
+    int* visit;
 }Graph;                                         //정점 및 전체 그래프를 표현한 구조체
 
-AdjListNode* createNode(int dest) { //createNode 함수
+AdjListNode* createNode(int dest) {             //createNode 함수
     AdjListNode* newNode = (AdjListNode*)malloc(sizeof(AdjListNode));
     newNode->dest = dest;
     newNode->next = NULL;
@@ -21,7 +22,8 @@ AdjListNode* createNode(int dest) { //createNode 함수
 Graph* createGraph(int V) {                     //createGraph 함수
     Graph* graph = (Graph*)malloc(sizeof(Graph));
     graph->V = V;
-    graph->adjLists = (AdjListNode**)malloc(V * sizeof(AdjListNode*));  //그래프 초기 설정 후
+    graph->adjLists = (AdjListNode**)malloc((V+1) * sizeof(AdjListNode*));  //그래프 초기 설정 후
+    graph->visit=(int*)malloc((V+1)*sizeof(int));
     for (int i = 0; i < V; ++i) {
         graph->adjLists[i] = NULL;              //각 정점 연결상태 초기화 후
     }
@@ -30,13 +32,51 @@ Graph* createGraph(int V) {                     //createGraph 함수
 
 void addEdge(Graph* graph, int src, int dest) { //addEdge 함수
     AdjListNode* newNode = createNode(dest);
-    newNode->next = graph->adjLists[src];
-    graph->adjLists[src] = newNode;            //루프인 경우 여기까지만 진행
+    AdjListNode* node = graph->adjLists[src];
+    AdjListNode* prev = NULL;
+
+    while (node != NULL && node->dest < dest) {
+        prev = node;
+        node = node->next;
+    }
+
+    newNode->next = node;
+    if (prev == NULL) {
+        graph->adjLists[src] = newNode;
+    }
+    else {
+        prev->next = newNode;                   //애초에 간선을 오름차순 순으로 넣기
+    }                                           //단방향인 경우 여기까지
 
     if (src != dest) {
-        newNode = createNode(src);
-        newNode->next = graph->adjLists[dest];
-        graph->adjLists[dest] = newNode;        //루프가 아닐 경우 반대 방향에서도 해당 과정 진행
+        AdjListNode* newNodeRev = createNode(src);
+        node = graph->adjLists[dest];
+        prev = NULL;
+
+        while (node != NULL && node->dest < src) {
+            prev = node;
+            node = node->next;
+        }
+
+        newNodeRev->next = node;
+        if (prev == NULL) {
+            graph->adjLists[dest] = newNodeRev;
+        }
+        else {
+            prev->next = newNodeRev;
+        }                                       //양방향인 경우 여기까지
+    }
+}
+
+void DFS(Graph *graph, int src){                //DFS 함수
+    graph->visit[src]=1;
+    printf("%d\n",src);                         //방문 처리 후 출력
+    AdjListNode* node=graph->adjLists[src];
+    while(node!=NULL){
+        if(graph->visit[node->dest]==0){
+            DFS(graph,node->dest);              //DFS 탐색
+        }
+        node=node->next;
     }
 }
 
@@ -50,6 +90,8 @@ int main(void) {                                //main 함수
         scanf("%d %d",&a,&b);
         addEdge(G, a, b);
     }
+    
+    DFS(G,s);
     
     return 0;
 }
