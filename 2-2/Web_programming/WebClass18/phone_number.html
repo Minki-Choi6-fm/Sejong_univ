@@ -1,0 +1,16 @@
+tel: <input type="text" id="input">
+<input type="button" onclick="check('input')" value="검사">
+<script>
+    let s=/^010-\d{4}[-]\d{4}$/;
+    function check(input){
+        let a=document.getElementById(input).value;
+        if(s.test(a)){
+            alert("welcome!");
+            return true;
+        }
+        else{
+            alert("Wrong form");
+            return false;
+        }
+    }
+</script>

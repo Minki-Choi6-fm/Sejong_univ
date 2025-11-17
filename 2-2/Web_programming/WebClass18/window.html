@@ -1,0 +1,12 @@
+<p id="test"></p>
+<script>
+    function sub(){
+        w=window.innerWidth;
+        h=window.innerHeight;
+
+        document.getElementById('test').innerHTML="너비: "+w+", 높이: "+h;
+    }
+    sub();
+
+    window.addEventListener("resize",sub);
+</script>
