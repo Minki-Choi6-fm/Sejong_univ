@@ -1,0 +1,12 @@
+<a href="#" onClick="sub()">이동하기</a>
+<script>
+    function sub(){
+        let s="";
+        for(let key in location){
+            value=location[key];
+            s+=key+":"+value+"\n";
+        }
+        alert(s);
+        location.replace("https://www.google.com");
+    }
+</script>

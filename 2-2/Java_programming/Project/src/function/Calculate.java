@@ -6,7 +6,11 @@ import DB.*;
 import function.*;
 
 public class Calculate {
-    public static void main(String[] args) {
-
+    private ArrayList<Course> courses;
+    Calculate(ArrayList<Course> courses) {
+        this.courses = courses;
+    }
+    ArrayList<Course> calculateCourses() {
+        return courses;
     }
 }

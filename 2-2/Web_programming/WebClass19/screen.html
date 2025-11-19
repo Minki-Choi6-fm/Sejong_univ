@@ -1,0 +1,14 @@
+<a href="#" onClick="sub('https://www.google.com','resize=1, scrollbars=1, status-1');return false">전체 화면 보기</a>
+<script>
+    function sub(url,winattributes){
+        let s="";
+        for(let key in screen){
+            value=screen[key];
+            s+=key+":"+value+"\n";
+        }
+        alert(s);
+        let maxwindow=window.open(url,"",winattributes);
+        maxwindow.moveTo(0,0);
+        maxwindow.resizeTo(screen.availWidth,screen.availHeight);
+    }
+</script>

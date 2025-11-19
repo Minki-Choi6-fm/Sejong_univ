@@ -7,11 +7,14 @@ public class Course {
     private int targetYear;
     private int totalSeats;
     private int interestCount;
+    private String courseType;
 
-    public Course(String courseCode, String courseName, String department, int targetYear, int totalSeats, int interestCount) {
+
+    public Course(String courseCode, String courseName, String department, int targetYear, int totalSeats, int interestCount, String courseType) {
         this.courseCode = courseCode;
         this.courseName = courseName;
         this.department = department;
+        this.courseType = courseType;
         this.targetYear = targetYear;
         this.totalSeats = totalSeats;
         this.interestCount = interestCount;
@@ -27,6 +30,9 @@ public class Course {
     }
     public String getDepartment() {
         return department;
+    }
+    public String getCourseType() {
+        return courseType;
     }
     public int getTargetYear() {
         return targetYear;

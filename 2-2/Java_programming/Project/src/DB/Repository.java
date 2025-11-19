@@ -47,7 +47,8 @@ public class Repository {
                         rs.getString("department"),
                         rs.getInt("target_year"),
                         rs.getInt("total_seats"),
-                        rs.getInt("interest_count")
+                        rs.getInt("interest_count"),
+                        rs.getString("course_type")
                 );
                 courseList.add(course);
             }
@@ -75,7 +76,8 @@ public class Repository {
                             rs.getString("department"),
                             rs.getInt("target_year"),
                             rs.getInt("total_seats"),
-                            rs.getInt("interest_count")
+                            rs.getInt("interest_count"),
+                            rs.getString("course_type")
                     );
                 }
             }
