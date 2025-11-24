@@ -1,0 +1,11 @@
+<canvas id="myCanvas" width="600" height="300" style="border:1px dotted red"></canvas>
+<script>
+    let canvas=document.getElementById("myCanvas");
+    let context=canvas.getContext("2d");
+    let gradient=context.createRadialGradient(70,50,10,80,60,120); //x0,y0,r0,x1,y1,r1 순으로 0는 시작원의 좌표, 1은 종료원의 좌표임
+
+    gradient.addColorStop(0,"white");
+    gradient.addColorStop(1,"red");
+    context.fillStyle=gradient;
+    context.fillRect(10,10,300,200);
+</script>

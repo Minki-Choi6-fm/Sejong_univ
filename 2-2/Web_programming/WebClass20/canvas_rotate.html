@@ -1,0 +1,13 @@
+<canvas id="myCanvas" width="600" height="300" style="border:1px dotted red"></canvas>
+<script>
+    let canvas=document.getElementById("myCanvas");
+    let context=canvas.getContext("2d");
+
+    context.fillStyle="blue";
+    context.fillRect(0,0,100,100);
+
+    context.translate(50,50);
+    context.rotate(Math.PI/4);
+    context.fillStyle="red";
+    context.fillRect(0,0,100,100);
+</script>

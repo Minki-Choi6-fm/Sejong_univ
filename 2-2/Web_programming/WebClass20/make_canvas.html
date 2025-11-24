@@ -1,0 +1,40 @@
+<button onclick="chooseColor()">선 색상 고르기</button>
+<button onclick="context.clearRect(0,0,canvas.width,canvas.height);">화면 지우기</button>
+<canvas id="myCanvas" width="600" height="400" style="border:1px solid black;background-color: antiquewhite;"></canvas>
+<script>
+    let canvas=document.getElementById("myCanvas");
+    let context=canvas.getContext("2d");
+
+    let draw_mode=false;
+
+    function chooseColor(){
+        let colorInput=document.createElement("input"); //버튼 누르면 input 태그가 생김?
+        colorInput.type="color";
+
+        colorInput.addEventListener("input",function(e){
+            context.strokeStyle=e.target.value;
+        });
+        colorInput.click();
+    }
+
+    canvas.addEventListener("mousemove",function(event){
+        if(!draw_mode)return;
+        let x=event.offsetX;
+        let y=event.offsetY;
+        context.lineTo(x,y);
+        context.stroke();
+    });
+    canvas.addEventListener("mousedown",function(event){
+        let x=event.offsetX;
+        let y=event.offsetY;
+        context.beginPath();
+        context.moveTo(x,y);
+        draw_mode=true;
+    });
+    canvas.addEventListener("mouseup",function(event){
+        draw_mode=false;
+    });
+    canvas.addEventListener("mouseout",function(event){
+        draw_mode=false;
+    });
+</script>

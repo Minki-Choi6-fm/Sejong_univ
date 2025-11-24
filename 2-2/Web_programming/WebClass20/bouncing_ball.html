@@ -1,0 +1,26 @@
+<canvas id="myCanvas" width="600" height="400" style="border:1px dotted black; background-color: yellow";></canvas>
+<script>
+    let canvas=document.getElementById("myCanvas");
+    let context=canvas.getContext("2d");
+
+    let dx=1;
+    let dy=1;                           //setInterval 주기에 dx,dy의 값만큼 움직임
+    let y=100;
+    let x=100;
+
+    function draw(){
+        context.clearRect(0,0,600,400);
+        context.beginPath();
+        context.fillStyle="red";
+        context.arc(x,y,20,0,Math.PI*2,true);
+        context.closePath();
+        context.fill();
+        if(x<(0+20)||x>(600-20))
+            dx=-dx;
+        if(y<(0+20)||y>(400-20))
+            dy=-dy;
+        x+=dx;
+        y+=dy;
+    }
+    setInterval(draw,1);
+</script>
