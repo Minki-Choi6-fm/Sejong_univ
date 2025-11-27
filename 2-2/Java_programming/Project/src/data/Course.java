@@ -8,7 +8,7 @@ public class Course {
     private int totalSeats;
     private int interestCount;
     private String courseType;
-
+    private double score;
 
     public Course(String courseCode, String courseName, String department, int targetYear, int totalSeats, int interestCount, String courseType) {
         this.courseCode = courseCode;
@@ -21,6 +21,12 @@ public class Course {
     }
     public void setInterestCount(int interestCount) {
         this.interestCount = interestCount;
+    }
+    public void setScore(double score) {
+        this.score = score;
+    }
+    public double getScore() {
+        return score;
     }
     public String getCourseCode() {
         return courseCode;

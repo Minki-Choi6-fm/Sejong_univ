@@ -90,10 +90,12 @@ public class UI_Course extends BaseUI {
                 }
 
                 Calculate calculate = new Calculate(courses);
-
+                calculate.calculate_priority(student);
+                ArrayList<Course> result=calculate.getCourses();
+                ArrayList<Course> exception=calculate.getExceptions();
                 close();
-                UI_Result result = new UI_Result();
-                result.window();
+                UI_Result res = new UI_Result(result,exception);
+                res.window();
             }
         });
 
