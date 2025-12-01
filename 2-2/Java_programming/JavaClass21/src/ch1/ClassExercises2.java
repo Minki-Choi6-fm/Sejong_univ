@@ -1,13 +1,9 @@
 package ch1;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import java.awt.Color;
+import java.awt.*;
+import java.awt.event.*;
 
 public class ClassExercises2 extends JFrame {
 
