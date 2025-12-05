@@ -1,0 +1,15 @@
+<p>숫자를 입력하세요</p>
+<input id="sibal" type="text">
+<button onclick="sub()">입력완료</button>
+<script>
+    function sub(){
+        let s=document.getElementById("sibal").value;
+        let num=/^[0-9]+$/
+        if(num.test(s)){
+            alert("숫자 어서오고");
+        }
+        else{
+            alert("숫자 아니잖아요;;");
+        }
+    }
+</script>

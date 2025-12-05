@@ -5,24 +5,15 @@ import java.sql.*;
 import java.util.*;
 
 public class Repository {
-
     public Student getStudentById(String studentId) {
         String sql = "SELECT * FROM students WHERE student_id = ?";
         Student student = null;
 
-        try (Connection conn = Utilize.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-
+        try (Connection conn = Utilize.getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, studentId);
-
             try (ResultSet rs = pstmt.executeQuery()) {
                 if (rs.next()) {
-                    student = new Student(
-                            rs.getString("student_id"),
-                            rs.getString("name"),
-                            rs.getString("major"),
-                            rs.getInt("grade")
-                    );
+                    student = new Student(rs.getString("student_id"), rs.getString("name"), rs.getString("major"), rs.getInt("grade"));
                 }
             }
         } catch (SQLException e) {
@@ -31,7 +22,6 @@ public class Repository {
         }
         return student;
     }
-
     public ArrayList<Course> getAllCourses() {
         String sql = "SELECT * FROM courses";
         ArrayList<Course> courseList = new ArrayList<>();
@@ -58,7 +48,6 @@ public class Repository {
         }
         return courseList;
     }
-
     public Course getCourseByCode(String courseCode) {
         String sql = "SELECT * FROM courses WHERE course_code = ?";
         Course course = null;

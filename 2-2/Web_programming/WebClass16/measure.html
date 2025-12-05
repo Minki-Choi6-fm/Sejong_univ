@@ -1,12 +1,21 @@
 <body>
-    반지름<input id="반지름" type="text">
+    반지름<input id="rad" type="text">
     <input type="radio" name="select" value="AREA">AREA
     <input type="radio" name="select" value="VOLUME">VOLUME<br>
     연산결과<input type="text" id="result" readonly>
     <button type="button" onclick="measure()">계산</button>
     <script>
         function measure(){
-            
+            let result;
+            let radius=document.getElementById('rad').value;
+            let click=document.getElementsByName('select');
+            if(click[0].checked){
+                result=Math.PI*Math.pow(radius,2);
+            }
+            else{
+                result=(4.0/3.0)*Math.PI*Math.pow(radius,3);
+            }
+            document.getElementById('result').value=result;
         }
     </script>
 </body>

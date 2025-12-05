@@ -28,7 +28,9 @@ public class Calculate {
             double totalSeats = c.getTotalSeats();
             double interestCount = c.getInterestCount();
 
-            if (totalSeats == 0) totalSeats = 1;
+            if (totalSeats == 0) {
+                totalSeats = 1;
+            }
 
             double score = interestCount / totalSeats;
 
