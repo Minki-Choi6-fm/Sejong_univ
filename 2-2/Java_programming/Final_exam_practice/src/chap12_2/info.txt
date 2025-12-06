@@ -1,0 +1,3 @@
+NAME:Choi
+ID:22
+AGE:2222
