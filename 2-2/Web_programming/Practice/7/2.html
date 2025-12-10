@@ -1,0 +1,23 @@
+<head>
+    <style>
+        *{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">팩토리얼을 계산해봅시다!</h1><br>
+    <div>정수를 입력하시오: <input type="number" id="input"></div>
+    <br><button onclick="sub()">팩토리얼 계산</button>
+    <p id="result"></p>
+    <script>
+        function sub(){
+            let s=document.getElementById('input').value;
+            let result=1;
+            for(let i=1;i<=s;i++){
+                result*=i;
+            }
+            document.getElementById("result").innerHTML="정수 "+s+"의 팩토리얼: "+result;
+        }
+    </script>
+</body>

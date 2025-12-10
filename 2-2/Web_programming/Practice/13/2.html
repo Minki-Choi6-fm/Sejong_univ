@@ -1,0 +1,35 @@
+<head>
+    <style>
+        #a { grid-area: a; }
+        #b { grid-area: b; }
+        #c { grid-area: c; }
+        #d { grid-area: d; }
+        #e { grid-area: e; }
+        .container{
+            width: 600px;
+            height: 400px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-areas:
+            'a a b b'
+            'c d d d'
+            'e e e e'
+            ;
+            gap: 5px;
+        }
+        .box{
+            color: white;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="a" class="box">Box A</div>
+        <div id="b" class="box">Box B</div>
+        <div id="c" class="box">Box C</div>
+        <div id="d" class="box">Box D</div>
+        <div id="e" class="box">Box E</div>
+    </div>
+</body>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>쇼핑 리스트</title>
+</head>
+<body>
+    <h1>다음 번에 마트가면 사와야 할 것(동적 쇼핑 리스트)</h1>
+    <div>
+        항목을 입력하시오: 
+        <input type="text" id="input">
+        <input type="button" onclick="sub()" value="항목 추가">
+    </div>
+    <ul id="list"></ul>
+
+    <script>
+        function sub() {
+            let inputField = document.getElementById("input");
+            let text = inputField.value;
+
+            let newItem = document.createElement("li");
+            newItem.innerText = text + " "; 
+
+            let delBtn = document.createElement("button");
+            delBtn.innerText = "삭제";
+
+            delBtn.onclick = function() {
+                let li = this.parentElement;
+                li.parentElement.removeChild(li);
+            };
+            newItem.appendChild(delBtn);
+            document.getElementById("list").appendChild(newItem);
+            inputField.value = "";
+        }
+    </script>
+</body>
+</html>

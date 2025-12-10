@@ -1,0 +1,50 @@
+<head>
+    <style>
+        *{
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .item1{
+            grid-area: header;
+            background-color: orange;
+        }
+        .item2{
+            grid-area: menu;
+            background-color: red;
+        }
+        .item3{
+            grid-area: article;
+            background-color: blue;
+        }
+        .item4{
+            grid-area: sidebar;
+            background-color: purple;
+        }
+        .item5{
+            grid-area: footer;
+            background-color:brown;
+        }
+        .container{
+            display: grid;
+            height: 300px;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-areas: 
+            'header header header'
+            'menu article sidebar'
+            'menu footer footer';
+            gap:5px;
+            background-color: chartreuse;
+            padding:5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item1">Header</div>
+        <div class="item2">Menu</div>
+        <div class="item3">Main</div>
+        <div class="item4">SideBar</div>
+        <div class="item5">Footer</div>
+    </div>
+</body>

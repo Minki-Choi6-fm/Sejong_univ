@@ -1,0 +1,54 @@
+<canvas id="canva" width="600" height="400"></canvas>
+<button onclick="sub()" type="button">찡그리기</button>
+<script>
+    let canvas=document.getElementById("canva");
+    let context=canvas.getContext('2d');
+    function sub(){
+        context.clearRect(0,0,600,400);
+        context.fillStyle="yellow";
+        context.beginPath();
+        context.moveTo(400,200);
+        context.arc(200,200,200,0,2*Math.PI,true);
+        context.stroke();
+        context.fill();
+
+        context.fillStyle="black";
+        context.beginPath();
+        context.moveTo(200,100);
+        context.arc(140,100,50,0,2*Math.PI,true);
+        context.fill();
+
+        context.beginPath();
+        context.moveTo(320,100);
+        context.arc(260,100,50,0,2*Math.PI,true);
+        context.fill();
+
+        context.beginPath();
+        context.moveTo(300,300);
+        context.arc(200,300,100,0,1*Math.PI,true);
+        context.stroke();
+    }
+
+        context.fillStyle="yellow";
+        context.beginPath();
+        context.moveTo(400,200);
+        context.arc(200,200,200,0,2*Math.PI,true);
+        context.stroke();
+        context.fill();
+
+        context.fillStyle="black";
+        context.beginPath();
+        context.moveTo(200,100);
+        context.arc(140,100,50,0,2*Math.PI,true);
+        context.fill();
+
+        context.beginPath();
+        context.moveTo(320,100);
+        context.arc(260,100,50,0,2*Math.PI,true);
+        context.fill();
+
+        context.beginPath();
+        context.moveTo(300,200);
+        context.arc(200,200,100,0,1*Math.PI,false);
+        context.stroke();
+</script>

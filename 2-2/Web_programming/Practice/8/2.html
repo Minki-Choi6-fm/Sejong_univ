@@ -1,0 +1,20 @@
+<body>
+    <div>구입날짜: <input type="date" id="date"><button onclick="sub()" type="button">검사</button></div>
+    <script>
+        function sub(){
+            let date=new Date;
+            let now=date.getTime();
+            let input=document.getElementById("date").value;
+            let i=new Date(input).getTime();
+
+            let limit=1000*60*60*24*30;
+            if(now-i>limit){
+                alert("교환 기한이 지났습니다.");
+            }
+            else{
+                alert(now);
+                alert(i);
+            }
+        }
+    </script>
+</body>

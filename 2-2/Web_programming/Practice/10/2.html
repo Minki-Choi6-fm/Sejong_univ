@@ -1,0 +1,46 @@
+<head>
+    <style>
+        #con{
+            height: 250px;
+            width: 100px;
+            border: 10px solid black;
+            border-radius: 75px;
+        }
+        .ball{
+            position: relative;
+            top:12px;
+            left: 12px;
+            height: 75px;
+            width:75px;
+            border-radius: 50%;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let state = 0; 
+        function changeLight() {
+            document.getElementById("red").style.backgroundColor = "white";
+            document.getElementById("yellow").style.backgroundColor = "white";
+            document.getElementById("green").style.backgroundColor = "white";
+
+            if (state == 0) {
+                document.getElementById("red").style.backgroundColor = "red";
+                state = 1; 
+            } else if (state == 1) {
+                document.getElementById("yellow").style.backgroundColor = "yellow";
+                state = 2; 
+            } else if (state == 2) {
+                document.getElementById("green").style.backgroundColor = "green";
+                state = 0; 
+            }
+        }
+        setInterval(changeLight, 1000);
+    </script>
+    <div id="con">
+        <div id="green" class="ball"></div>
+        <div id="yellow" class="ball"></div>
+        <div id="red" class="ball"></div>
+    </div>
+</body>

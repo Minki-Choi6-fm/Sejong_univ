@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script>
+        function check(str){
+            if(str.indexOf("XXX")==-1&&str.indexOf("xxx")==-1){
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+
+        let userStr = prompt("문자열을 입력하세요");
+
+        if (userStr) { 
+            document.write("check(\'"+userStr+"\')-> "+check(userStr));
+        }
+    </script>
+</body>
+</html>

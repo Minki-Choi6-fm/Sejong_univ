@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        img {
+            position: absolute; /* 움직이려면 절대 좌표 필수 */
+            width: 100px;       /* 크기 지정 (선택 사항) */
+            cursor: pointer;    /* 마우스 올리면 손가락 모양 */
+        }
+    </style>
+</head>
+<body>
+    <img src="/Media/cat.png" onclick="toggleMove()" id="image">
+
+    <script>
+        let isMoving = false; // 움직임 상태를 저장하는 변수 (0: 정지, 1: 이동)
+        let img = document.getElementById('image');
+
+        // 1. 클릭하면 상태(isMoving)를 반대로 바꿈 (토글)
+        function toggleMove() {
+            if (isMoving == false) {
+                isMoving = true;  // 움직임 시작
+            } else {
+                isMoving = false; // 움직임 멈춤
+            }
+        }
+
+        // 2. 마우스가 움직일 때마다 실행되는 함수 (이벤트 리스너)
+        document.onmousemove = function (e) {
+            // isMoving이 true일 때만 이미지가 마우스를 따라감
+            if (isMoving) {
+                // 마우스의 좌표(clientX, clientY)를 이미지의 위치로 설정
+                // "px" 단위를 꼭 붙여야 합니다! [cite: 5339-5340]
+                img.style.left = e.clientX + "px"; 
+                img.style.top = e.clientY + "px";
+            }
+        };
+    </script>
+</body>
+</html>

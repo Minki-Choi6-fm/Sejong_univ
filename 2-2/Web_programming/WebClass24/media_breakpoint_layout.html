@@ -1,0 +1,36 @@
+<head>
+    <meta name="viewport" content="width:device-width, initial-scale=1.0">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .left{
+            background-color: brown;
+            float: left;
+            width: 20%;
+            height: 300px;
+        }
+        .main{
+            background-color: aqua;
+            float:left;
+            width:60%;
+            height: 300px;
+        }
+        .right{
+            background-color: chartreuse;
+            float: left;
+            width: 20%;
+            height: 300px;
+        }
+        @media screen and (max-width:500px){
+            .left,.main,.right{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="left">왼쪽 메뉴</div>
+    <div class="main">메인 컨텐츠</div>
+    <div class="right">오른쪽 메뉴</div>
+</body>

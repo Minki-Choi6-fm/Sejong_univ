@@ -1,0 +1,16 @@
+<body>
+    <p>숫자를 입력하시오</p>
+    <input type="text" id="input"><input type="button" value="제출" onclick="sub()">
+    <script>
+        function sub(){
+            let s=document.getElementById("input").value;
+            let regex=/^\d+$/;
+            if(regex.test(s)){
+                alert("숫자 어서오고");
+            }
+            else{
+                alert("숫자 아닌데요");
+            }
+        }
+    </script>
+</body>

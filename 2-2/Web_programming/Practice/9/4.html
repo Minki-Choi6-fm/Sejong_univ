@@ -1,0 +1,16 @@
+<body>
+    <script>
+        function sub(){
+            let name=document.getElementById("name").value;
+            let address=document.getElementById("address").value;
+            document.getElementById("result").innerHTML=name+"<br>"+address;
+        }
+    </script>
+    <p>입력한 문자열을 출력해보세요.</p>
+    <form>
+        이름:<input type="text" id="name"><br>
+        주소:<input type="text" id="address"><br>
+        <input type="button" value="출력" onclick="sub()">
+    </form>
+    <p id="result">결과는 여기에 출력하세요</p>
+</body>

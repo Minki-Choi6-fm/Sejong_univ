@@ -1,0 +1,15 @@
+<body>
+    <script>
+        function find(arr,value){
+            for(let i=0;i<arr.length;i++){
+                if(arr[i].equal(value)){
+                    return i;
+                }
+            }
+            return -1;
+        }
+        let arr=["Hello",10,32.6,true];
+        let value=prompt("입력");
+        document.write(value+" -> "+find(arr,value));
+    </script>
+</body>

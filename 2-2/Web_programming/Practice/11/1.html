@@ -1,0 +1,22 @@
+<body>
+    <canvas id="canva" width="600" height="400"></canvas>
+    <script>
+        let x=0;
+        let dx=1;
+        let s=document.getElementById('canva');
+        let context=s.getContext('2d');
+
+        function moving(){
+            context.clearRect(0,0,600,400);
+            context.fillStyle="blue";
+            context.fillRect(x,250,200,150);
+            if(x<0||x>400){
+                dx-=dx;
+            }
+            x+=dx;
+        }
+        setInterval(moving,1);
+        
+        
+    </script>
+</body>

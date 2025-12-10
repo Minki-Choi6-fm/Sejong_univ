@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script>
+        function strCap(str) {
+            return str.charAt(0).toUpperCase() + str.slice(1);
+        }
+        let userStr = prompt("문자열을 입력하세요", "hong");
+
+        if (userStr) {
+            document.write(strCap(userStr));
+        }
+    </script>
+</body>
+</html>

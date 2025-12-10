@@ -1,0 +1,12 @@
+<script>
+    function sub(){
+        let start=new Date().getTime();
+        let s=0;
+        for(let i=0;i<=1000000;i++){
+            s+=i;
+        }
+        let end=new Date().getTime();
+        document.write(end-start+"밀리초가 걸렸음!");
+    }
+    sub();
+</script>

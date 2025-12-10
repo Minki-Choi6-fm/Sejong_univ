@@ -1,0 +1,24 @@
+<body>
+    <canvas id="canva" width="600" height="800"></canvas>
+    <script>
+        let canvas=document.getElementById("canva");
+        let context=canvas.getContext('2d');
+        let image=new Image();
+        let y=0;
+        let dy=0.1;
+        image.src="/Media/cat.png";
+
+        image.onload = function() {
+            setInterval(sub, 1); 
+        };
+
+        function sub(){
+            context.clearRect(0,0,600,800);
+            context.drawImage(image,200,y);
+            if(y>500||y<0){
+                dy-=dy;
+            }
+            y+=dy;
+        }
+    </script>
+</body>

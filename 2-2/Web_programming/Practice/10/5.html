@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>회원 가입</title>
+</head>
+<body>
+    <h2>회원 신청서</h2>
+    <form>
+        이름: <input type="text" id="name"><br><br>
+        
+        남성 <input type="radio" name="gender" value="male">
+        여성 <input type="radio" name="gender" value="female"><br><br>
+
+        휴대폰 번호: <input type="text" id="phone" placeholder="01012345678"><br><br>
+        
+        이메일: <input type="email" id="email"><br><br>
+        
+        패스워드(6-8 글자): <input type="password" id="pass"><br><br>
+
+        <input type="button" value="패스워드 검증" onclick="check()">
+    </form>
+
+    <script>
+        function check() {
+            let phone = document.getElementById("phone").value;
+            let pass = document.getElementById("pass").value;
+            
+            let phoneRegex = /^010\d{8}$/;
+            let passRegex = /^.{6,8}$/;
+
+            if (!phoneRegex.test(phone)) {
+                alert("휴대폰 번호 형식이 올바르지 않습니다.");
+                return;
+            }
+
+            if (!passRegex.test(pass)) {
+                alert("패스워드는 6~8글자여야 합니다.");
+                return;
+            }
+
+            alert("검증 성공!");
+        }
+    </script>
+</body>
+</html>

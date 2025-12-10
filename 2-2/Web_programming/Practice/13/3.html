@@ -1,0 +1,50 @@
+<head>
+    <meta name="viewport" content="width:device-width, initial-scale=1.0">
+    <style>
+        #one{grid-area: one;}
+        #two{grid-area: two;}
+        #three{grid-area: three;}
+        #four{grid-area: four;}
+        #five{grid-area: five;}
+        #six{grid-area: six;}
+        .elem{
+            background-color: rgb(136, 168, 70);
+            color: white;
+            height: 200px;
+            padding:20px;
+        }
+        .container{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-areas: 
+            'one two three'
+            'four five six'
+            ;
+            gap: 10px;
+            padding: 20px;
+
+        }
+        @media screen and (max-width:500px){
+            .container{
+                grid-template-columns: 1fr;
+                grid-template-areas: 
+                'one' 
+                'two'   
+                'three'
+                'four' 
+                'five' 
+                'six';
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="elem" id="one">ONE</div>
+        <div class="elem" id="two">TWO</div>
+        <div class="elem" id="three">THREE</div>
+        <div class="elem" id="four">FOUR</div>
+        <div class="elem" id="five">FIVE</div>
+        <div class="elem" id="six">SIX</div>
+    </div>
+</body>
