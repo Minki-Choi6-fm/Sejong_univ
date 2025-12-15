@@ -1,0 +1,38 @@
+<head>
+  
+</head>
+<body>
+  <h1 id="circle"></h1>
+  <h1 id="square"></h1>
+  <script>
+    class Shape{
+      constructor(x,y){
+        this.x=x;
+        this.y=y;
+      }
+    }
+    class Circle extends Shape{
+      constructor(x,y,radius){
+        super(x,y);
+        this.radius=radius;
+      }
+      area(){
+        return this.radius*this.radius*Math.PI;
+      }
+    }
+    class Rect extends Shape{
+      constructor(x,y,width,height){
+        super(x,y);
+        this.width=width;
+        this.height=height;
+      }
+      area(){
+        return this.width*this.height;
+      }
+    }
+    let circle=new Circle(0,0,5);
+    let square=new Rect(5,10,3,7);
+    document.getElementById("circle").innerHTML="원의 중심점은 ("+circle.x+", "+circle.y+") 이고, 면적은 "+circle.area()+"입니다.";
+    document.getElementById("square").innerHTML="사각형의 한 점은 ("+square.x+", "+square.y+") 이고, 면적은 "+square.area()+"입니다.";
+  </script>
+</body>

@@ -1,0 +1,22 @@
+<head>
+  <style>
+    #die{
+      border-radius: 50px;
+      width:300px;
+      height: 300px;
+      border:1px solid black;
+      background-color: yellow;
+      font:200px Arial;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <p id="die" onclick="sub()"></p>
+  <script>
+    function sub(){
+      let s=Math.floor(Math.random()*6);
+      document.getElementById("die").innerHTML=s;
+    }
+  </script>
+</body>

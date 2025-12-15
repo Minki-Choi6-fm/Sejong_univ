@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
 </head>
 <body>
-    <form name="test" method="post" action="1.jsp">
+    <form name="test" method="post" action="">
         첫 번째 숫자: <input type="text" name="first"><br>
         두 번째 숫자: <input type="text" name="second"><br>
         <input type="submit" value="제출">

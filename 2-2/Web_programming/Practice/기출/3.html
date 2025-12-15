@@ -1,0 +1,11 @@
+<body>
+  <p id="clock"></p>
+  <button onclick="clearInterval(s)">시계 멈추기</button>
+  <script>
+    let s=setInterval(sub,1000);
+    function sub(){
+      let date=new Date();
+      document.getElementById("clock").innerHTML=date.toLocaleTimeString();
+    }
+  </script>
+</body>
